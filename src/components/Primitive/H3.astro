@@ -1,10 +1,17 @@
 ---
 type Props = {
   title: string;
+  is_inline?: boolean;
 };
-const { title } = Astro.props;
+const { title, is_inline} = Astro.props;
 ---
 
-<h3 class="w-full">
+<h3 class=`${is_inline ? "inline" : "w-full"}`>
   {title}
 </h3>
+
+<style>
+  h3 {
+    font-size: 24px;
+  }
+</style>

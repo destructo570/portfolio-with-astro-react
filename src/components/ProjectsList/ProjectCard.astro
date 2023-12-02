@@ -1,0 +1,21 @@
+---
+import Card from "../Card/Card.astro";
+import H4 from "../Primitive/H4.astro";
+import Paragraph from "../Primitive/Paragraph.astro";
+type Props = {
+  title: string;
+  sub_title: string;
+};
+
+const { title, sub_title } = Astro.props;
+---
+
+<Card is_hover={true}>
+  <div class="flex gap-4">
+    <img src="https:/picsum.photos/48" alt="" />
+    <div>
+      <H4 title={title} />
+      <Paragraph text={sub_title} type="small" />
+    </div>
+  </div>
+</Card>

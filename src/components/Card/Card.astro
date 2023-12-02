@@ -1,0 +1,12 @@
+---
+import "./styles.css"
+type Props = {
+    is_hover?: boolean;
+}
+
+const {is_hover} = Astro.props;
+---
+
+<div class={`card p-4 rounded-md ${is_hover? 'cursor-pointer' : ''}`}>
+    <slot/>
+</div>

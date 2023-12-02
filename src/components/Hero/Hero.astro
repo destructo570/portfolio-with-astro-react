@@ -1,18 +1,25 @@
 ---
-
+import H2 from "../Primitive/H2.astro";
+import H3 from "../Primitive/H3.astro";
+import Paragraph from "../Primitive/Paragraph.astro";
+import "./styles.css";
 ---
 
-<section>
-  <div>
-    <h3>Hi, I am Vishal Kashi</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eveniet
-      odio, tempore voluptate repellendus totam ipsum molestiae assumenda illo
-      non maiores quia placeat qui, distinctio asperiores unde perspiciatis
-      dolore. Commodi!
-    </p>
+<section class="flex justify-between items-center min-h-[800px] max-sm:flex-col-reverse">
+  <div class="w-1/2 my-auto max-sm:w-full">
+    <H2 title="Vishal Kashi" />
+    <H3 title="Fullstack Web Developer" />
+    <Paragraph
+      text={`I build awesome stuff for the web. Some of the technologies I am currently working with: `}
+    />
   </div>
   <div>
-    <img src="picsum.photos/400/300" alt=""/>
+    <img
+      class="w-full"
+      src="https://picsum.photos/300"
+      alt=""
+      width={300}
+      height={300}
+    />
   </div>
 </section>

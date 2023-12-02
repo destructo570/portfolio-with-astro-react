@@ -1,0 +1,31 @@
+---
+import H3 from "../Primitive/H3.astro";
+import { PROJECTS } from "../../constants/projects.ts";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section>
+  <div class="flex gap-6 items-center">
+    <H3 title="Projects" is_inline={true} />
+    <div class="divider"></div>
+  </div>
+  <div class="py-5">
+    {
+      PROJECTS.map((category) => {
+        return (
+          <div>
+            <H3 title={category.category} />
+            <div class="grid grid-cols-2 gap-3 py-5">
+              {category.projects.map((project) => (
+                <ProjectCard
+                  title={project.title}
+                  sub_title={project.sub_title}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>

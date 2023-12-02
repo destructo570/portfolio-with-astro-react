@@ -1,0 +1,26 @@
+---
+type Props = {
+  text: string;
+  type?: string;
+};
+const { text, type = "medium" } = Astro.props;
+---
+
+<p class={`w-full text-${type}`}>
+  {text}
+</p>
+
+<style>
+  p {
+    font-weight: 300;
+  }
+  .text-small {
+    font-size: 12px;
+  }
+  .text-medium {
+    font-size: 16px;
+  }
+  .text-large {
+    font-size: 18px;
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+type Props = {
+    title: string;
+}
+const {title} = Astro.props;
+---
+
+<p class="tag rounded bg-zinc-600 px-2 py-1 inline-block">{title}</p>
+
+<style>
+    .tag{
+        background-color: rgba(82, 82, 82, 0.4);
+        font-size: 12px;
+        color: #cdcdcd;
+    }
+</style>
