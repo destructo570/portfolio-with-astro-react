@@ -8,5 +8,21 @@ const {is_hover} = Astro.props;
 ---
 
 <div class={`card p-4 rounded-md ${is_hover? 'cursor-pointer' : ''}`}>
+    <div class='card-border'></div>
     <slot/>
 </div>
+
+<script>
+    const list = document.getElementsByClassName("cards");
+    for(let card_list of list){
+        card_list.onmousemove = (e) => {
+      for (const card of document.getElementsByClassName("card")) {
+        const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    }
+    }
+}
+</script>
