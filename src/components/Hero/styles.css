@@ -1,0 +1,52 @@
+.hero-profile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+}
+.hero-profile-img{
+    position: absolute;
+    top: 160px;
+    right: 0px;
+    z-index: 20;
+}
+
+.hero-circle-card {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  bottom: 20px;
+  bottom: 260px;
+  right: 0px;
+
+  background: rgba(218, 172, 226, 0.4);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: float 6s ease-in-out infinite;
+  z-index:40;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-10px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+.card-green{
+    background: rgba(172, 226, 185, 0.4);
+    top: 200px;
+    right: 280px;
+    height: 100px;
+    width: 100px;
+    z-index: 30;
+    animation: float 8s ease-in-out infinite;
+}

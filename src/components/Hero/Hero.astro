@@ -1,4 +1,5 @@
 ---
+import Card from "../Card/Card.astro";
 import H2 from "../Primitive/H2.astro";
 import H3 from "../Primitive/H3.astro";
 import Paragraph from "../Primitive/Paragraph.astro";
@@ -13,13 +14,15 @@ import "./styles.css";
       text={`I build awesome stuff for the web. Some of the technologies I am currently working with: `}
     />
   </div>
-  <div>
+  <div class="hero-profile">
     <img
-      class="w-full"
-      src="https://picsum.photos/300"
+      src="/images/user_profile.png"
       alt=""
-      width={300}
-      height={300}
+      width={400}
+      height={400}
+      class="hero-profile-img"
     />
+    <div class="hero-circle-card card-green rounded-full"></div>
+    <div class="hero-circle-card rounded-full"></div>
   </div>
 </section>

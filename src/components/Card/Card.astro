@@ -2,12 +2,13 @@
 import "./styles.css"
 type Props = {
     is_hover?: boolean;
+    is_circle?: boolean;
 }
 
-const {is_hover} = Astro.props;
+const {is_hover, is_circle} = Astro.props;
 ---
 
-<div class={`card p-4 rounded-md ${is_hover? 'cursor-pointer' : ''}`}>
+<div class={`card p-4  ${is_hover? 'cursor-pointer' : ''} ${is_circle? 'rounded-full' : 'rounded-md'}`}>
     <div class='card-border'></div>
     <slot/>
 </div>
