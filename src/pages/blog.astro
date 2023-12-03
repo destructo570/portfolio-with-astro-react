@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import H3 from "../components/Primitive/H3.astro";
 import Main from "../components/Primitive/Main.astro";
 import PostList from "../components/PostList/PostList.astro";
 const posts = await getCollection("posts");
@@ -9,7 +8,7 @@ const posts = await getCollection("posts");
 
 <Layout title="Blog">
   <Main>
-    <H3 title="All blog posts" classes='py-5'/>
+    <h3 class="py-5">All blog posts</h3>
     {(<PostList posts={posts} />)}
   </Main>
 </Layout>

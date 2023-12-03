@@ -1,9 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import user_profile from "../../../public/images/user_profile.png"
-import H2 from "../Primitive/H2.astro";
-import H3 from "../Primitive/H3.astro";
-import Paragraph from "../Primitive/Paragraph.astro";
+import user_profile from "../../../public/images/user_profile.png";
 import "./styles.css";
 ---
 
@@ -11,11 +8,9 @@ import "./styles.css";
   class="flex justify-between items-center min-h-[800px] max-sm:flex-col-reverse"
 >
   <div class="w-1/2 my-auto max-sm:w-full">
-    <H2 title="Vishal Kashi" />
-    <H3 title="Fullstack Web Developer" />
-    <Paragraph
-      text={`I build awesome stuff for web and mobile.`}
-    />
+    <h2>Vishal Kashi</h2>
+    <h3>Fullstack Web Developer</h3>
+    <p>I build awesome stuff for web and mobile.</p>
     <div class="flex gap-3 py-2">
       <a
         href="https://www.github.com/destructo570"
@@ -43,7 +38,9 @@ import "./styles.css";
       height={400}
       class="hero-profile-img absolute top-[20%] right-[0px] z-10"
     />
-    <div class="hero-circle-card absolute card-green rounded-full top-[25%] left-[0px] z-20">
+    <div
+      class="hero-circle-card absolute card-green rounded-full top-[25%] left-[0px] z-20"
+    >
     </div>
     <div
       class="hero-circle-card absolute rounded-full bottom-[30%] right-[0px] max-sm:bottom-[15%] z-20"

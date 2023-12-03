@@ -1,36 +1,34 @@
 ---
-import  { getCollection, type CollectionEntry } from "astro:content";
-import Layout from '../../layouts/Layout.astro';
-import H3 from "../../components/Primitive/H3.astro"
-import Main from "../../components/Primitive/Main.astro"
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Main from "../../components/Primitive/Main.astro";
 
-export const getStaticPaths =  ( async() => {
-    const posts = await getCollection('posts');
-    const paths = posts.map(post => {
-        return {
-            params: {
-                slug: post.slug,
-            },
-            props: {post}
-        }
-    })
-    return paths;
-})
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: { post },
+    };
+  });
+  return paths;
+};
 
 type Props = {
-    post: CollectionEntry<"posts">
-}
+  post: CollectionEntry<"posts">;
+};
 
-const {post} = Astro.props;
-const {Content} = await post.render();
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
-
 <Layout title={post.data.title}>
-	<Main>
-        <div class="prose prose-md prose-invert max-w-[968px] mx-auto my-24">
-            <H3 title={post.data.title}/>
-            <Content/>
-        </div>
-	</Main>
+  <Main>
+    <div class="prose prose-md prose-invert max-w-[968px] mx-auto my-24">
+      <h3>{post.data.title}</h3>
+      <Content />
+    </div>
+  </Main>
 </Layout>

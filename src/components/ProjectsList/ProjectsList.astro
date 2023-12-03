@@ -1,32 +1,13 @@
 ---
-import H3 from "../Primitive/H3.astro";
-import H4 from "../Primitive/H4.astro";
-import { PROJECTS } from "../../constants/projects.ts";
-import ProjectCard from "./ProjectCard.astro";
+import ProjectCardList from "./ProjectCardList";
 ---
 
 <section>
   <div class="flex gap-4 items-center">
-    <H3 title="🧙‍♂️Projects" classes="inline-block w-max min-w-[150px]" />
+    <h3 class="inline-block w-max min-w-[150px]">🧙‍♂️Projects</h3>
     <div class="divider"></div>
   </div>
   <div class="py-5">
-    {
-      PROJECTS.map((category) => {
-        return (
-          <div class="py-5">
-            <H4 title={category.category} class:list={'decoration-solid'} is_underline={true}/>
-            <div class="grid grid-cols-2 gap-3 py-5 cards max-sm:grid-cols-1">
-              {category.projects.map((project) => (
-                <ProjectCard
-                  title={project.title}
-                  sub_title={project.sub_title}
-                />
-              ))}
-            </div>
-          </div>
-        );
-      })
-    }
+    <ProjectCardList client:load />
   </div>
 </section>

@@ -1,4 +1,4 @@
-:root{
+:root {
   --accent-color: #b4ff39;
   --text-color: #dddddd;
   --card-color: rgba(23, 23, 23, 0.95);
@@ -23,8 +23,24 @@ html {
 
 h2,
 h3,
-h4 {
+h4,
+strong {
   font-weight: 600;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 16px;
+}
+p {
+  font-weight: 300;
 }
 
 .divider {
