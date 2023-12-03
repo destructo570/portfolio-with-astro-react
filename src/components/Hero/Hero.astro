@@ -1,18 +1,37 @@
 ---
-import Card from "../Card/Card.astro";
 import H2 from "../Primitive/H2.astro";
 import H3 from "../Primitive/H3.astro";
 import Paragraph from "../Primitive/Paragraph.astro";
 import "./styles.css";
 ---
 
-<section class="flex justify-between items-center min-h-[800px] max-sm:flex-col-reverse">
+<section
+  class="flex justify-between items-center min-h-[800px] max-sm:flex-col-reverse"
+>
   <div class="w-1/2 my-auto max-sm:w-full">
     <H2 title="Vishal Kashi" />
     <H3 title="Fullstack Web Developer" />
     <Paragraph
       text={`I build awesome stuff for the web. Some of the technologies I am currently working with: `}
     />
+    <div class="flex gap-3 py-2">
+      <a
+        href="https://www.github.com/destructo570"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src="/icons/github.svg" alt="" />
+      </a><a
+        href="https://www.twitter.com/destructo570"
+        target="_blank"
+        rel="noreferrer"><img src="/icons/x.svg" alt="" /></a
+      >
+      <a
+        href="https://www.dribbble.com/VishalKashi"
+        target="_blank"
+        rel="noreferrer"><img src="/icons/dribbble.svg" alt="" /></a
+      >
+    </div>
   </div>
   <div class="hero-profile min-w-[400px] min-h-[800px] max-sm:min-h-[600px]">
     <img
@@ -22,7 +41,11 @@ import "./styles.css";
       height={400}
       class="hero-profile-img"
     />
-    <div class="hero-circle-card card-green rounded-full top-[25%] left-[0]"></div>
-    <div class="hero-circle-card rounded-full bottom-[30%] right-[0px] max-sm:bottom-[15%]"></div>
+    <div class="hero-circle-card card-green rounded-full top-[25%] left-[0]">
+    </div>
+    <div
+      class="hero-circle-card rounded-full bottom-[30%] right-[0px] max-sm:bottom-[15%]"
+    >
+    </div>
   </div>
 </section>
