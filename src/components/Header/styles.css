@@ -2,3 +2,14 @@
     height: 48px;
     width: 48px;
 }
+
+.nav-links a{
+    color: var(--text-color);
+}
+.active a{
+    color: #f7f7f7;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    color: var(--accent-color);
+    text-decoration-color: var(--accent-color);
+}

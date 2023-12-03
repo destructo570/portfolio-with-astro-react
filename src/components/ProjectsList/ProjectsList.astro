@@ -1,5 +1,6 @@
 ---
 import H3 from "../Primitive/H3.astro";
+import H4 from "../Primitive/H4.astro";
 import { PROJECTS } from "../../constants/projects.ts";
 import ProjectCard from "./ProjectCard.astro";
 ---
@@ -14,7 +15,7 @@ import ProjectCard from "./ProjectCard.astro";
       PROJECTS.map((category) => {
         return (
           <div class="py-5">
-            <H3 title={category.category} />
+            <H4 title={category.category} class:list={'decoration-solid'} is_underline={true}/>
             <div class="grid grid-cols-2 gap-3 py-5 cards max-sm:grid-cols-1">
               {category.projects.map((project) => (
                 <ProjectCard

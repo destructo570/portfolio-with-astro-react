@@ -1,3 +1,8 @@
+:root{
+  --accent-color: #b4ff39;
+  --text-color: #dddddd;
+}
+
 html {
   color: #f7f7f7;
   font-family: "IBM Plex Mono";
@@ -28,9 +33,9 @@ h4 {
 
 ::selection {
   color: #0f0913;
-  background: #b4ff39;
+  background: var(--accent-color);
 }
 ::-moz-selection {
   color: #0f0913;
-  background: #b4ff39;
+  background: var(--accent-color);
 }

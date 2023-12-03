@@ -2,11 +2,12 @@
 type Props = {
   title: string;
   is_inline?: boolean;
+  is_center?: boolean;
 };
-const { title, is_inline} = Astro.props;
+const { title, is_inline, is_center} = Astro.props;
 ---
 
-<h3 class=`${is_inline ? "inline" : "w-full"}`>
+<h3 class:list={[`${is_inline ? "inline" : "w-full"}`, {'text-center': is_center}]}>
   {title}
 </h3>
 

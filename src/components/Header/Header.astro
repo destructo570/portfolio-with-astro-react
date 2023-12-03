@@ -1,19 +1,21 @@
 ---
 import "./styles.css";
+const pathname = new URL(Astro.request.url).pathname;
+const current_path = pathname.slice(1);
 ---
 
 <header class="flex justify-between max-w-7xl mx-auto px-16 py-4 max-sm:px-6">
   <div>
     <img src="/favicon.svg" alt="logo" class="logo" />
   </div>
-  <ul class="flex justify-between space-x-6">
-    <li class="flex justify-center items-center">
+  <ul class="flex justify-between space-x-6 nav-links">
+    <li class:list={["flex justify-center items-center", {'active': current_path === ""}]}>
       <a href="/">Home</a>
     </li>
-    <li class="flex justify-center items-center">
+    <li class:list={["flex justify-center items-center", {'active': current_path === "blog"}]}>
       <a href="/blog">Blog</a>
     </li>
-    <li class="flex justify-center items-center">
+    <li class:list={["flex justify-center items-center", {'active': current_path === "about"}]}>
       <a href="/about">About</a>
     </li>
   </ul>
