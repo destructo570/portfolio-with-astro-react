@@ -1,29 +1,35 @@
 ---
-import "./styles.css"
+import "./styles.css";
 type Props = {
-    is_hover?: boolean;
-    is_circle?: boolean;
-}
+  is_hover?: boolean;
+  is_circle?: boolean;
+};
 
-const {is_hover, is_circle} = Astro.props;
+const { is_hover, is_circle } = Astro.props;
 ---
 
-<div class={`card p-4  ${is_hover? 'cursor-pointer' : ''} ${is_circle? 'rounded-full' : 'rounded-md'}`}>
-    <div class='card-border'></div>
-    <slot/>
+<div
+  class={`card p-4  ${is_hover ? "cursor-pointer" : ""} ${
+    is_circle ? "rounded-full" : "rounded-md"
+  }`}
+>
+  <div class="card-border"></div>
+  <slot />
 </div>
 
 <script>
-    const list = document.getElementsByClassName("cards");
-    for(let card_list of list){
-        card_list.onmousemove = (e) => {
-      for (const card of document.getElementsByClassName("card")) {
-        const rect = card.getBoundingClientRect(),
-          x = e.clientX - rect.left,
-          y = e.clientY - rect.top;
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
+  const list = document.getElementsByClassName("cards");
+  for (let card_list of list) {
+    if (card_list) {
+      card_list.onmousemove = (e) => {
+        for (const card of document.getElementsByClassName("card")) {
+          const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+          card.style.setProperty("--mouse-x", `${x}px`);
+          card.style.setProperty("--mouse-y", `${y}px`);
+        }
+      };
     }
-    }
-}
+  }
 </script>
