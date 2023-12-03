@@ -1,5 +1,5 @@
 ---
-import  { getCollection, CollectionEntry } from "astro:content";
+import  { getCollection, type CollectionEntry } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
 import H3 from "../../components/Primitive/H3.astro"
 import Main from "../../components/Primitive/Main.astro"
@@ -28,8 +28,8 @@ const {Content} = await post.render();
 
 <Layout title={post.data.title}>
 	<Main>
-		<H3 title={post.data.title}/>
-        <div class="prose prose-2xl">
+        <div class="prose prose-md prose-invert max-w-[968px] mx-auto my-24">
+            <H3 title={post.data.title}/>
             <Content/>
         </div>
 	</Main>
