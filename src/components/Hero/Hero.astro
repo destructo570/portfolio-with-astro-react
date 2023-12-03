@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import user_profile from "../../../public/images/user_profile.png"
 import H2 from "../Primitive/H2.astro";
 import H3 from "../Primitive/H3.astro";
 import Paragraph from "../Primitive/Paragraph.astro";
@@ -34,8 +36,8 @@ import "./styles.css";
     </div>
   </div>
   <div class="hero-profile min-w-[400px] min-h-[800px] max-sm:min-h-[600px]">
-    <img
-      src="/images/user_profile.png"
+    <Image
+      src={user_profile}
       alt=""
       width={400}
       height={400}
