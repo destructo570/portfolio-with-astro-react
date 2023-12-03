@@ -15,7 +15,7 @@ const { title, sub_title } = Astro.props;
     <img src="https:/picsum.photos/48" alt="" class="p-2"/>
     <div class="p-2">
       <H4 title={title} />
-      <Paragraph text={sub_title} type="small" />
+      <Paragraph text={sub_title} type="small" is_clamped={true}/>
     </div>
   </div>
 </Card>

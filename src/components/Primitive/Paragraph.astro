@@ -2,11 +2,12 @@
 type Props = {
   text: string;
   type?: string;
+  is_clamped?: boolean;
 };
-const { text, type = "medium" } = Astro.props;
+const { text, type = "medium", is_clamped } = Astro.props;
 ---
 
-<p class={`w-full text-${type}`}>
+<p class:list={["w-full", `text-${type}`, { 'line-clamp-2': is_clamped }]}>
   {text}
 </p>
 
