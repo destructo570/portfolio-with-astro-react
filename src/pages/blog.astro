@@ -9,7 +9,7 @@ const posts = await getCollection("posts");
 
 <Layout title="Blog">
   <Main>
-    <H3 title="Destructo's Blog" />
+    <H3 title="All blog posts" classes='py-5'/>
     {(<PostList posts={posts} />)}
   </Main>
 </Layout>

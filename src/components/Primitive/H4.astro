@@ -3,11 +3,12 @@ type Props = {
   title: string;
   is_inline?: boolean;
   is_underline?: boolean;
+  classes?:string;
 };
-const { title, is_inline, is_underline } = Astro.props;
+const { title, is_inline, is_underline, classes } = Astro.props;
 ---
 
-<h4 class:list={[`${is_inline ? "inline" : "w-full"}`, {'underline underline-offset-4': is_underline}]}>
+<h4 class:list={[`${is_inline ? "inline" : "w-full"}`, {'underline underline-offset-4': is_underline}, classes] }>
   {title}
 </h4>
 

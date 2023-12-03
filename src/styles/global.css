@@ -1,6 +1,8 @@
 :root{
   --accent-color: #b4ff39;
   --text-color: #dddddd;
+  --card-color: rgba(23, 23, 23, 0.95);
+  --card-color-hover: rgba(41, 41, 41, 0.95);
 }
 
 html {

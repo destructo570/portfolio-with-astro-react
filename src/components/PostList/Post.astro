@@ -1,16 +1,37 @@
 ---
-import { type CollectionEntry, Image } from "astro:content";
+import { type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import H4 from "../Primitive/H4.astro";
+import Paragraph from "../Primitive/Paragraph.astro";
 type Props = {
   post: CollectionEntry<"posts">;
 };
 const { post } = Astro.props;
 ---
 
-<article>
-  <a href={`/blog/${post.slug}`}>
-    <Image src={post.data.image} alt={post.data.title} height={500} width={500}/>
-    <h4>{post.data.title}</h4>
-    <p class="line-clamp-2">{post.body}</p>
+<article class="w-full h-[380px] p-4 rounded-md blog-item-card">
+  <a href={`/blog/${post.slug}`} class="h-[360px] block">
+    <Image
+      class:list={["object-cover w-full h-[220px]"]}
+      src={post.data.image}
+      alt={post.data.title}
+      height={240}
+    />
+    <H4 title={post.data.title} classes="mt-4 mb-1" />
+    <Paragraph
+      text={post.body}
+      type="small"
+      classes={"line-clamp-4"}
+    />
   </a>
 </article>
+
+
+<style>
+  .blog-item-card{
+    background-color: var(--card-color);
+  }
+  .blog-item-card:hover{
+    background-color: var(--card-color-hover);
+  }
+</style>

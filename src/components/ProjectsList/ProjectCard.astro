@@ -10,12 +10,12 @@ type Props = {
 const { title, sub_title } = Astro.props;
 ---
 
-<Card is_hover={true}>
+<Card is_hover={true} classes="min-h-[100px]">
   <div class="flex gap-4 card-content">
     <img src="https:/picsum.photos/48" alt="" class="p-2"/>
     <div class="p-2">
       <H4 title={title} />
-      <Paragraph text={sub_title} type="small" is_clamped={true}/>
+      <Paragraph text={sub_title} type="small" classes={"line-clamp-2"}/>
     </div>
   </div>
 </Card>
