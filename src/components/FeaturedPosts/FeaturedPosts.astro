@@ -1,0 +1,24 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { formatBlogPosts } from "../../utils/utils";
+import Post from "../PostList/Post.astro";
+type Props = {
+  posts: CollectionEntry<"posts">[];
+};
+const posts = await getCollection("posts");
+const formatted_blog_posts = formatBlogPosts(posts, {sort_by_date: false, limit: 3});
+
+---
+
+<section class="min-h-max">
+    <div class="flex gap-4 items-center">
+      <h3 class="inline-block w-max min-w-[220px]">🙋Recent Posts</h3>
+      <div class="divider"></div>
+    </div>
+    <div class="pt-10 pb-32">
+        <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-x-16 gap-y-14 mb-24 cards">
+            {formatted_blog_posts?.map((post) => <Post post={post} />)}
+          </div>
+    </div>
+  </section>
+  

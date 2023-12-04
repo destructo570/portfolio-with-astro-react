@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import React from "react";
 import { PROJECTS } from "../../constants/projects.ts";
 import ProjectCard from "./ProjectCard.jsx";
 const ProjectCardList = () => {
 
-  useEffect(()=>{
+  React.useEffect(()=>{
     const list = document.getElementsByClassName("cards");
     for (let card_list of list) {
       if (card_list) {
@@ -23,13 +23,13 @@ const ProjectCardList = () => {
 
   return (
     <>
-      {PROJECTS.map((category) => {
+      {PROJECTS.map((category, index) => {
         return (
-          <div class="py-5">
+          <div className="py-5" key={`category-${index}`}>
             <h4 className={"decoration-solid underline"}>
               {category.category}
             </h4>
-            <div class="grid grid-cols-2 gap-3 py-5 cards max-sm:grid-cols-1">
+            <div className="grid grid-cols-2 gap-3 py-5 cards max-sm:grid-cols-1">
               {category.projects.map((project) => (
                 <ProjectCard
                   title={project.title}

@@ -1,12 +1,14 @@
 ---
 import { type CollectionEntry } from "astro:content";
+import { formatBlogPosts } from "../../utils/utils";
 import Post from "./Post.astro";
 type Props = {
   posts: CollectionEntry<"posts">[];
 };
 const { posts } = Astro.props;
+const formatted_blog_posts = formatBlogPosts(posts, {sort_by_date: true});
 ---
 
 <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-x-16 gap-y-14 mb-24 cards">
-  {posts.map((post) => <Post post={post} />)}
+  {formatted_blog_posts.map((post) => <Post post={post} />)}
 </div>
