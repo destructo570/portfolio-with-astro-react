@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import { slugify } from "../../../utils/utils";
+import Layout from "../../../layouts/Layout.astro"
+import Main from "../../../components/Primitive/Main.astro";
+import PostList from "../../../components/PostList/PostList.astro";
+export async function getStaticPaths(){
+    return [
+        {
+        params: {category: slugify('React Native')},
+        props: {name: 'React Native'}
+    },
+        {
+        params: {category: slugify('Design Tips')},
+        props: {name: 'Design Tips'}
+    },
+        {
+        params: {category: slugify('studio tips')},
+        props: {name: 'studio tips'}
+    },
+];
+}
+const posts = await getCollection("posts");
+const {category} = Astro.params;
+const {name} = Astro.props;
+const category_posts = posts.filter((post) => post.data.categories.some( item => category === slugify(item)));
+---
+
+<Layout title={name}>
+    <Main is_full_height={true}>
+        <h3 class="py-5">Posts about {name}</h3>
+        <PostList posts={category_posts}/>
+    </Main>
+</Layout>

@@ -21,3 +21,14 @@ export const formatBlogPosts = (
   }
   return filtered_posts;
 };
+
+export const slugify = (text)=>{
+  return text
+  .toString()
+  .toLowerCase()
+  .replace(/\s+/g, '-')
+  .replace(/[^\w-]+/g, '')
+  .replace(/--+/g, '-')
+  .replace(/^-+/, '')
+  .replace(/-+$/, '');
+}
