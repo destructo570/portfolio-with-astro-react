@@ -7,7 +7,7 @@ const ProjectCard = (props) => {
       <div className="flex gap-4 card-content">
         <img src="/icons/layout.svg" alt="" className="p-2" />
         <div className="p-2">
-          <h4>{title}</h4>
+          <h4 className="line-clamp-1">{title}</h4>
           <p className="text-xs line-clamp-2">{sub_title}</p>
         </div>
       </div>
