@@ -13,7 +13,7 @@ const { prev_url, next_url, current_page, last_page } = Astro.props;
   <a
     href={next_url}
     class:list={[
-      `${next_url ? "hover:cursor-pointer" : "hover:cursor-default"}`,
+      `${next_url ? "hover:cursor-pointer" : "hover:cursor-not-allowed text-disabled cursor-not-allowed"}`,
     ]}><h3>Next👉</h3></a
   >
 </nav>
