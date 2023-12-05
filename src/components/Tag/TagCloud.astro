@@ -1,0 +1,15 @@
+---
+import Tag from './Tag.astro';
+type Props = {
+    list_data: string[]
+}
+
+const {list_data} = Astro.props;
+---
+
+
+<section class="w-full flex gap-8">
+    {list_data.map((item)=>{
+        return <Tag title={item}/>
+    })}
+</section>

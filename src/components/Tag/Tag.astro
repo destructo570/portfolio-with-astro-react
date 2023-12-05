@@ -1,11 +1,12 @@
 ---
+import { slugify } from '../../utils/utils';
 type Props = {
     title: string;
 }
 const {title} = Astro.props;
 ---
 
-<p class="tag rounded bg-zinc-600 px-2 py-1 inline-block">{title}</p>
+<a class="tag rounded bg-zinc-600 px-2 py-1 inline-block no-underline" href={`/blog/category/${slugify(title)}`}>{title}</a>
 
 <style>
     .tag{

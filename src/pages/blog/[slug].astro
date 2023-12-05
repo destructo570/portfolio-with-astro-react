@@ -2,6 +2,9 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Main from "../../components/Primitive/Main.astro";
+import { Image } from "astro:assets";
+import TagCloud from "../../components/Tag/TagCloud.astro";
+import dayjs from 'dayjs';
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
@@ -27,7 +30,13 @@ const { Content } = await post.render();
 <Layout title={post.data.title}>
   <Main>
     <div class="prose prose-md prose-invert max-w-[968px] mx-auto my-24">
-      <h3>{post.data.title}</h3>
+      <h1>{post.data.title}</h1>
+      <Image src={post.data.image} alt=""/>
+      <div class="flex gap-4 items-center h-[24px] pt-2 pb-14">
+        <p class="min-w-[120px]">{dayjs(`${post.data.date}`).format("MMM DD,YYYY")}</p>
+        |
+        <TagCloud list_data={post.data.categories}/>
+      </div>
       <Content />
     </div>
   </Main>
