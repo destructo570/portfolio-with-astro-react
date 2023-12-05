@@ -1,0 +1,19 @@
+---
+const { prev_url, next_url, current_page, last_page } = Astro.props;
+---
+
+<nav aria-label="Blog pages" class="flex justify-between items-center w-full py-6">
+  <a
+    href={prev_url}
+    class:list={[
+      `${prev_url ? "hover:cursor-pointer" : "hover:cursor-not-allowed text-disabled cursor-not-allowed"}`,
+    ]}><h3>👈Prev</h3></a
+  >
+  <h4>Page {current_page} of {last_page}</h4>
+  <a
+    href={next_url}
+    class:list={[
+      `${next_url ? "hover:cursor-pointer" : "hover:cursor-default"}`,
+    ]}><h3>Next👉</h3></a
+  >
+</nav>

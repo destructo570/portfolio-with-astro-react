@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Main from "../../components/Primitive/Main.astro";
+import PostList from "../../components/PostList/PostList.astro";
+import Pagination from "../../components/Pagination/Pagination.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection("posts");
+  return paginate(posts, { pageSize: 9 });
+}
+
+const { page } = Astro.props;
+
+---
+
+<Layout title="Blog">
+  <Main>
+    <div class="py-12">
+      <Pagination prev_url={page?.url?.prev} next_url={page?.url?.next} current_page={page?.currentPage} last_page={page?.lastPage}/>
+      {(<PostList posts={page?.data} />)}
+    </div>
+  </Main>
+</Layout>
