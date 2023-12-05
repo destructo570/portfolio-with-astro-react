@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import PostList from "../PostList/PostList.astro";
 
 type Props = {
-  posts: CollectionEntry<"posts">[];
+  posts?: CollectionEntry<"posts">[];
 };
 
 const posts = await getCollection("posts");

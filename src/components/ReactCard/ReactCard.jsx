@@ -32,7 +32,7 @@ const ReactCard = (props) => {
   }
   return (
     <div className={class_name} ref={ref} onMouseMove={handleMouseMove} onClick={openUrl}>
-      <div class="card-border"></div>
+      <div className="card-border"></div>
       {children}
     </div>
   );
