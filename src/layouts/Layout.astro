@@ -9,7 +9,7 @@ interface Props {
   description?: string;
   frontmatter?: string;
   robots?: string;
-  image?: any
+  image?: any;
 }
 
 const { title, description, frontmatter, robots, image } = Astro.props;
@@ -26,11 +26,7 @@ const { title, description, frontmatter, robots, image } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;600&family=Pixelify+Sans:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Pixelify+Sans:wght@600&display=swap"
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
