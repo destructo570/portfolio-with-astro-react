@@ -1,4 +1,4 @@
 ---
 name: Vishal Kashi
-image: ../posts/images/coffee.jpg
+image: ../../../public/images/user_profile.png
 ---

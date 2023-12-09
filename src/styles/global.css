@@ -29,6 +29,10 @@ strong {
   font-weight: 500;
 }
 
+h1 {
+  font-size: 56px !important;
+  font-weight: 400 !important;
+}
 h2 {
   font-size: 40px;
 }

@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+type Props = {
+  author: string;
+  date: string;
+  read_time: string;
+  classes?: string;
+};
+const authors = await getCollection("authors");
+const { author, read_time = "5 min read", date, classes} = Astro.props;
+const author_data = authors?.find((item) => item.slug === author);
+---
+
+<div class:list={["flex items-start max-h-[64px] gap-4", classes]}>
+  <Image
+    class="rounded-full w-[64] m-0"
+    src={author_data?.data?.image}
+    alt="author"
+    height={64}
+    width={64}
+  />
+  <div class="my-auto">
+    <p class="m-0 font-semibold tracking-wider text-base">
+      {author_data?.data?.name}
+    </p>
+    <div class="flex justify-start items-center gap-2">
+      <p class="m-0 text-sm tracking-wider">{date}</p>
+      <p class="m-0 text-sm">•</p>
+      <p class="m-0 text-sm opacity-60 tracking-wider">{read_time}</p>
+    </div>
+  </div>
+</div>

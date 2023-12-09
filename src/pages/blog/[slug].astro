@@ -1,10 +1,12 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import Main from "../../components/Primitive/Main.astro";
+import Main from "../../components/Main.astro";
 import { Image } from "astro:assets";
-import TagCloud from "../../components/Tag/TagCloud.astro";
-import dayjs from 'dayjs';
+// import TagCloud from "../../components/Tag/TagCloud.astro";
+import dayjs from "dayjs";
+import Author from "../../components/Author/Author.astro";
+import Link from "../../components/Link/Link.astro";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
@@ -29,15 +31,30 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.body} image={post.data.image}>
   <Main>
-    <div class="prose prose-md prose-invert max-w-[968px] mx-auto my-24">
-      <h1>{post.data.title}</h1>
-      <Image src={post.data.image} alt=""/>
-      <div class="flex gap-4 items-center h-[24px] pt-2 pb-14">
-        <p class="min-w-[120px]">{dayjs(`${post.data.date}`).format("MMM DD,YYYY")}</p>
-        |
-        <TagCloud list_data={post.data.categories}/>
+    <div class="mx-auto mb-24">
+      <div class="max-w-[768px] mx-auto my-36">
+        <Link link="/blog" title="Back to all posts" classes="mb-2"/>
+        <h1>{post.data.title}</h1>
+        <Author
+          author={post.data.author}
+          date={dayjs(`${post.data.date}`).locale("en").format("MMMM D, YYYY")}
+          image={post.data.image}
+          classes="py-8"
+        />
       </div>
-      <Content />
+      <Image
+        src={post.data.image}
+        alt=""
+        class="rounded-2xl min-w-[1200px]"
+      />
+      <div class="max-w-[968px] mx-auto">
+        <!-- <div class="flex gap-4 items-center h-[24px] mt-8 max-w-[768px] mx-auto">
+          <TagCloud list_data={post.data.categories} />
+        </div> -->
+        <div class="prose prose-md max-w-[768px] prose-invert mx-auto my-20">
+          <Content />
+        </div>
+      </div>
     </div>
   </Main>
 </Layout>

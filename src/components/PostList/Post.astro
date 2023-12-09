@@ -5,31 +5,32 @@ type Props = {
   post: CollectionEntry<"posts">;
 };
 const { post } = Astro.props;
-
 ---
 
-<article class="w-full h-[380px] p-4 rounded-md blog-item-card">
+<article class="w-full h-[380px] rounded-md blog-item-card hover:scale-95">
   <a href={`/blog/${post.slug}`} class="h-[360px] block">
     <Image
-      class:list={["object-cover w-full h-[220px] rounded"]}
+      class:list={["object-cover w-full h-[220px] rounded-t-md"]}
       src={post.data.image}
       alt={post.data.title}
       height={240}
     />
-    <h4 class="mt-4 mb-1 line-clamp-2">{post.data.title}</h4>
-    <p class={"line-clamp-3 text-xs"}>{post.body}</p>
+    <div class="p-4">
+      <h4 class="mb-1 line-clamp-2">{post.data.title}</h4>
+      <p class={"line-clamp-3 text-sm opacity-50"}>{post.body}</p>
+    </div>
   </a>
 </article>
 
 <style>
   .blog-item-card {
     background-color: var(--card-color);
-    -webkit-transition: background-color 0.2s ease-out;
-    -moz-transition: background-color  0.2s ease-out;
-    -o-transition: background-color  0.2s ease-out;
-    transition: background-color  0.2s ease-out;
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform  0.2s ease-in-out;
+    -o-transition: transform  0.2s ease-in-out;
+    transition: transform .2s ease-in-out;
   }
   .blog-item-card:hover {
-    background-color: var(--card-color-hover);
+    transform: scale(0.97);
   }
 </style>
