@@ -4,9 +4,10 @@ type Props = {
   link: string;
   title: string;
   classes?: string;
-  before_asset?: string | null;
+  before_asset?: string;
+  disabled?: boolean;
 };
-const { link, title, classes, before_asset = null } = Astro.props;
+const { link, title, classes, before_asset, disabled=false } = Astro.props;
 ---
 
 <div class:list={["flex justify-start items-center gap-2 link", classes]}>
