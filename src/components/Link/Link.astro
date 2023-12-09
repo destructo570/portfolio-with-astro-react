@@ -1,23 +1,26 @@
 ---
+import { Icon } from 'astro-icon';
 type Props = {
   link: string;
   title: string;
   classes?: string;
-  before_asset?: any | null;
+  before_asset?: string | null;
 };
 const { link, title, classes, before_asset = null } = Astro.props;
 ---
 
 <div class:list={["flex justify-start items-center gap-2 link", classes]}>
-  <a href={link}>{title}</a>
+    <!-- Loads the SVG in `/src/icons/filename.svg` -->
+    {before_asset && <Icon name={before_asset} class='max-w-[16px]'/>}
+  <a href={link} class="opacity-50">{title}</a>
 </div>
 
 <style>
-    .link a{
+    .link a, .link svg{
         opacity: 0.5;
         transition: opacity .2s ease-in-out;
     }
-    .link a:hover{
+    .link:hover a, .link:hover svg{
         color: white;
         opacity: 1;
     }

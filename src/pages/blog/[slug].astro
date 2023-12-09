@@ -33,7 +33,7 @@ const { Content } = await post.render();
   <Main>
     <div class="mx-auto mb-24">
       <div class="max-w-[768px] mx-auto my-36">
-        <Link link="/blog" title="Back to all posts" classes="mb-2"/>
+        <Link link="/blog" title="Back to all posts" classes="mb-2" before_asset="back"/>
         <h1>{post.data.title}</h1>
         <Author
           author={post.data.author}

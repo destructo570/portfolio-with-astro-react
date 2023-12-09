@@ -64,3 +64,13 @@ p {
   color: #0f0913;
   background: var(--accent-color);
 }
+
+.anim-hover-white{
+  opacity: 0.5;
+  transition: opacity .2s ease-in-out;
+}
+
+.anim-hover-white:hover{
+  color: white;
+  opacity: 1;
+}

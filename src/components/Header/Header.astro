@@ -9,13 +9,13 @@ const current_path = pathname.slice(1);
     <img src="/favicon.svg" alt="logo" class="logo" />
   </a>
   <ul class="flex justify-between space-x-6 nav-links">
-    <li class:list={["flex justify-center items-center", {'active': current_path === ""}]}>
+    <li class:list={["flex justify-center items-center", `${current_path === "" ? 'active': 'anim-hover-white'}`]}>
       <a href="/">Home</a>
     </li>
-    <li class:list={["flex justify-center items-center", {'active': current_path === "blog"}]}>
+    <li class:list={["flex justify-center items-center", `${current_path === "blog" ? 'active': 'anim-hover-white'}`]}>
       <a href="/blog">Blog</a>
     </li>
-    <li class:list={["flex justify-center items-center"]}>
+    <li class:list={["flex justify-center items-center anim-hover-white"]}>
       <a href="/resume.pdf" download="Resume">Resume</a>
     </li>
   </ul>
