@@ -44,6 +44,7 @@ h3 {
 h4 {
   font-size: 16px;
 }
+
 p {
   font-weight: 400;
   font-size: 18px;
@@ -73,4 +74,11 @@ p {
 .anim-hover-white:hover{
   color: white;
   opacity: 1;
+}
+
+.hover-highlight{
+  transition: color .2s ease-in-out;
+}
+.hover-highlight:hover{
+  color: var(--accent-color);
 }
