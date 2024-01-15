@@ -2,8 +2,7 @@ import React from "react";
 import { PROJECTS } from "../../constants/projects.ts";
 import ProjectCard from "./ProjectCard.jsx";
 const ProjectCardList = () => {
-
-  React.useEffect(()=>{
+  React.useEffect(() => {
     const list = document.getElementsByClassName("cards");
     for (let card_list of list) {
       if (card_list) {
@@ -18,8 +17,7 @@ const ProjectCardList = () => {
         };
       }
     }
-  }, [])
-
+  }, []);
 
   return (
     <>

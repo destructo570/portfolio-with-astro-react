@@ -5,7 +5,6 @@ const ProjectCard = (props) => {
   return (
     <ReactCard is_hover={true} classes="min-h-[100px]" url={url} id={id}>
       <div className="flex card-content">
-        {/* <img src="/icons/flag (1).svg" alt="" className="p-2" /> */}
         <div className="px-4 py-2">
           <h4 className="line-clamp-1 text-lg tracking-wide">{title}</h4>
           <p className="text-sm line-clamp-2 tracking-wider opacity-50">{sub_title}</p>
