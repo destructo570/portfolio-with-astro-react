@@ -22,7 +22,13 @@ html {
   background-color: #030303;
 }
 
-h1,h2,h3,h4,h5,strong{
+h1,
+h2,
+h3,
+h4,
+h5,
+strong,
+u {
   color: #ffffffec !important;
 }
 
@@ -53,14 +59,15 @@ p {
   color: var(--text-default) !important;
   font-weight: 400;
   font-size: 18px;
-  font-family: 'IBM Plex Sans', 'sans-serif';
+  font-family: "IBM Plex Sans", "sans-serif";
 }
 
-p, li{
+p,
+li {
   line-height: 1.4;
 }
 
-pre{
+pre {
   background-color: #0f0f0f !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -80,30 +87,30 @@ pre{
   background: var(--accent-color);
 }
 
-.anim-hover-white{
+.anim-hover-white {
   opacity: 0.5;
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.anim-hover-white:hover{
+.anim-hover-white:hover {
   color: white;
   opacity: 1;
 }
 
-.hover-highlight{
-  transition: color .2s ease-in-out;
+.hover-highlight {
+  transition: color 0.2s ease-in-out;
 }
-.hover-highlight:hover{
+.hover-highlight:hover {
   color: var(--accent-color);
 }
 
-.image-noise-wrapper{
+.image-noise-wrapper {
   position: relative;
   object-fit: cover;
   width: 100%;
 }
 
-.image-noise{
+.image-noise {
   background-image: url(/public/images/other/noise.png);
   background-position: 0 0;
   background-size: 200px;
