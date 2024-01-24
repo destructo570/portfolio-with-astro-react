@@ -1,6 +1,6 @@
 :root {
   --accent-color: #b4ff39;
-  --text-default: #dddddd;
+  --text-default: #ddddddd7;
   --text-disabled: #adadad8e;
   --card-color: rgba(23, 23, 23, 0.95);
   --card-color-hover: rgba(41, 41, 41, 0.95);
@@ -20,6 +20,10 @@ html {
     );
   background-size: 100px 100px;
   background-color: #030303;
+}
+
+h1,h2,h3,h4,h5,strong{
+  color: #ffffffec !important;
 }
 
 h2,
@@ -46,9 +50,19 @@ h4 {
 }
 
 p {
+  color: var(--text-default) !important;
   font-weight: 400;
   font-size: 18px;
   font-family: 'IBM Plex Sans', 'sans-serif';
+}
+
+p, li{
+  line-height: 1.4;
+}
+
+pre{
+  background-color: #0f0f0f !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .divider {
@@ -81,4 +95,22 @@ p {
 }
 .hover-highlight:hover{
   color: var(--accent-color);
+}
+
+.image-noise-wrapper{
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+}
+
+.image-noise{
+  background-image: url(/public/images/other/noise.png);
+  background-position: 0 0;
+  background-size: 200px;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  border: ;
 }

@@ -31,8 +31,8 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.body} image={post.data.image}>
   <Main>
-    <div class="mx-auto mb-24">
-      <div class="max-w-[768px] mx-auto my-36">
+    <div class="mx-auto mb-24 flex flex-col items-center">
+      <div class="max-w-[768px] mx-auto my-32">
         <StyledLink link="/blog" title="Back to all posts" classes="mb-2" before_asset="back"/>
         <h1>{post.data.title}</h1>
         <Author
@@ -42,11 +42,14 @@ const { Content } = await post.render();
           classes="py-8"
         />
       </div>
-      <Image
+      <div class="image-noise-wrapper max-w-[1000px]">
+        <Image
         src={post.data.image}
         alt=""
-        class="rounded-2xl min-w-[1200px]"
-      />
+        class="rounded-2xl max-h-[500px]"
+        />
+        <div class="w-[1000px] image-noise"></div>
+      </div>
       <div class="max-w-[968px] mx-auto">
         <!-- <div class="flex gap-4 items-center h-[24px] mt-8 max-w-[768px] mx-auto">
           <TagCloud list_data={post.data.categories} />
