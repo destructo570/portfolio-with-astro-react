@@ -73,11 +73,11 @@ li {
   line-height: 1.4;
 }
 
-tr, thead {
+tr, thead, hr{
   border-color: #292929 !important;
 }
 
-pre {
+pre{
   background-color: #0f0f0f !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
