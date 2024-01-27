@@ -22,11 +22,9 @@ html {
   background-color: #030303;
 }
 
-blockquote{
+blockquote {
   border-left-color: var(--accent-color) !important;
 }
-
-
 
 h1,
 h2,
@@ -73,11 +71,13 @@ li {
   line-height: 1.4;
 }
 
-tr, thead, hr{
+tr,
+thead,
+hr {
   border-color: #292929 !important;
 }
 
-pre{
+pre {
   background-color: #0f0f0f !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -111,7 +111,7 @@ pre{
   transition: color 0.2s ease-in-out;
 }
 .hover-highlight:hover {
-  color: var(--accent-color);
+  color: var(--accent-color) !important;
 }
 
 .image-noise-wrapper {
