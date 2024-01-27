@@ -32,7 +32,7 @@ const { Content } = await post.render();
 <Layout title={post.data.title} description={post.body} image={post.data.image}>
   <Main>
     <div class="mx-auto mb-24 flex flex-col items-center">
-      <div class="max-w-[768px] mx-auto my-32">
+      <div class="w-full max-w-[768px] mx-auto my-32">
         <StyledLink link="/blog" title="Back to all posts" classes="mb-2" before_asset="back"/>
         <h1>{post.data.title}</h1>
         <Author
