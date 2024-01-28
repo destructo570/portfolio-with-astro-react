@@ -1,19 +1,25 @@
 ---
+import StyledLink from "../StyledLink/StyledLink.astro";
+
 const { prev_url, next_url, current_page, last_page } = Astro.props;
 ---
 
-<nav aria-label="Blog pages" class="flex justify-between items-center w-full pt-6 pb-12">
-  <a
-    href={prev_url}
-    class:list={[
-      `${prev_url ? "hover:cursor-pointer" : "hover:cursor-not-allowed text-disabled cursor-not-allowed"}`,
-    ]}><h4>👈 Prev</h4></a
-  >
+<nav
+  aria-label="Blog pages"
+  class="flex justify-between items-center w-full pt-6 pb-12"
+>
+  <StyledLink
+    link={prev_url}
+    title="Prev"
+    disabled={!prev_url}
+    before_asset="back"
+  />
   <h4>Page {current_page} of {last_page}</h4>
-  <a
-    href={next_url}
-    class:list={[
-      `${next_url ? "hover:cursor-pointer" : "hover:cursor-not-allowed text-disabled cursor-not-allowed"}`,
-    ]}><h4>Next 👉</h4></a
-  >
+  <StyledLink
+    link={next_url}
+    title="Next"
+    disabled={!next_url}
+    asset_classes="rotate-180"
+    after_asset="back"
+  />
 </nav>

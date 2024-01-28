@@ -1,28 +1,67 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 type Props = {
   link: string;
   title: string;
   classes?: string;
   before_asset?: string;
+  after_asset?: string;
+  asset_classes?: string;
   disabled?: boolean;
 };
-const { link, title, classes, before_asset, disabled=false } = Astro.props;
+const {
+  link,
+  title,
+  classes,
+  asset_classes,
+  before_asset,
+  after_asset,
+  disabled = false,
+} = Astro.props;
 ---
 
-<div class:list={["flex justify-start items-center gap-2 link", classes]}>
-    <!-- Loads the SVG in `/src/icons/filename.svg` -->
-    {before_asset && <Icon name={before_asset} class='max-w-[16px]'/>}
+<div
+  class:list={[
+    "flex justify-start items-center gap-2 link",
+    classes,
+    { disabled: disabled },
+  ]}
+>
+  <!-- Loads the SVG in `/src/icons/filename.svg` -->
+  {
+    before_asset && (
+      <Icon
+        name={before_asset}
+        class={`max-w-[16px] w-[16px] ${asset_classes}`}
+      />
+    )
+  }
   <a href={link} class="opacity-50">{title}</a>
+  {
+    after_asset && (
+      <Icon
+        name={after_asset}
+        class={`max-w-[16px] w-[16px] ${asset_classes}`}
+      />
+    )
+  }
 </div>
 
 <style>
-    .link a, .link svg{
-        opacity: 0.5;
-        transition: opacity .2s ease-in-out;
-    }
-    .link:hover a, .link:hover svg{
-        color: white;
-        opacity: 1;
-    }
+  .link a,
+  .link svg {
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+  }
+  .link:hover a,
+  .link:hover svg {
+    color: white;
+    opacity: 1;
+  }
+  .disabled.link:hover a,
+  .disabled.link:hover svg {
+    color: #f7f7f7;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 </style>
