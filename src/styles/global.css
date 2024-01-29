@@ -130,3 +130,25 @@ pre {
   left: 0%;
   right: 0%;
 }
+
+.project-list{
+  background-color: #111111;
+  border: 1px solid #f7f7f723;
+  border-radius: 8px;
+}
+
+.tag{
+  background-color: rgba(82, 82, 82, 0.4);
+  font-size: 14px;
+  color: #cdcdcd;
+}
+
+.anim-hover-accent {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.anim-hover-accent:hover {
+  color: var(--accent-color);
+  opacity: 1;
+}

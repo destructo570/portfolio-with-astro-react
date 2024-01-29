@@ -176,3 +176,19 @@ export const PROJECTS = [
     ],
   },
 ];
+
+
+export const TECH_STACK = [
+  {
+    title: "Frontend",
+    tech_stack: ["React", "NextJs", "Astro", "TypeScript", "JavaScript", "HTML", "CSS" , "Tailwind", "React Native"]
+  },
+  {
+    title: "Backend",
+    tech_stack: ["NodeJs", "Express", "NextAuth", "JWT", "PostgresSQL", "MySQL", "MongoDb", "Firebase"]
+  },
+  {
+    title: "Other stuff",
+    tech_stack: ["Git", "WebGl", "R3F", "ThreeJs", "Java", "Kotlin", "Android development"]
+  },
+]
