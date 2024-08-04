@@ -121,7 +121,7 @@ pre {
 }
 
 .image-noise {
-  background-image: url(/public/images/other/noise.png);
+  background-image: url(/images/other/noise.png);
   background-position: 0 0;
   background-size: 200px;
   position: absolute;
