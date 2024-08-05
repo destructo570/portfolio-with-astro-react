@@ -39,6 +39,7 @@ const { Content } = await post.render();
           author={post.data.author}
           date={dayjs(`${post.data.date}`).locale("en").format("MMMM D, YYYY")}
           image={post.data.image}
+          read_time={post.data.read_time}
           classes="py-8"
         />
       </div>

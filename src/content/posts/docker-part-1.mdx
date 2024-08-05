@@ -1,0 +1,105 @@
+---
+author: vishal-kashi
+categories: ["Docker"]
+date: 2024-08-04
+read_time: 10 min read
+featured: false
+image: ./images/band.jpg
+title: Docker - Introduction and Overview
+---
+
+## What is Docker ?
+Docker is an open source platform that enables you to build, deploy, run, update and manage containerized applications easily.
+It lets you create and manage containers which contains eveything the application/sofware needs to run, such as code, libraries, runtime, file system, etc.
+
+## Containers v/s Virtual machines
+
+Virtualization and Containerization are two popular ways to host an application in a machine or computer.
+
+### Virtualization: 
+Virtualization allows us to partition or split a single physical computer into several VMs. Each of these VMs can then work independently and run different
+operation systems and applications while sharing the resources of a single computer. This is possible due to an intermediary layer using software known as a hypervisor, which makes virtualization possible.. It divides the underlying physical computer into multiple VMs and allocates and manges resources in each divided virtual environment.
+
+### Containerization:
+Containerization is basically another form of virtualization. It lets you run applications and their dependencies in isolated containers, but unlike VMs
+containers use the same operating system kernel as the host machine. This provides a portable and consistent runtime for applications and it's more lightweight
+compared to VMs since only one operating system needs to be managed which allows you to quickly scale up or down based on demand. These containers can be run on any machine with a container runtime, such as Docker. These container runtimes provide an isolated environment for running applications consistently across different environments.
+
+| Virtualization                                              | Containerization       
+| ----------------------------------------------------------- | ---------------------------------------------------------------
+| Each VM runs its own operating system                       | Containers share the host's operating system kernel  
+| Each VM has its own set of resources                        | Containers are lightweight and share the host machine's resources 
+| Performance overhead since multiple OSs needs to be managed | Lower performance overhead since they share the same host OS 
+| VVMs are less portable due to varying guest OSs             | Containers are highly portable across different systems  
+| Slower deployment times due to OS boot process              | Faster deployment times since containers start quickly 
+| Requires more resources as each VM has its own OS           | More efficient resource utilization with containerization
+
+Why containerize an application ?
+1. <b>Different operating systems:</b> Developers and users often have different operating system which can lead to compatibility issues when running applications.
+2. <b>Varying project setups:</b> The steps required to run the same application can be different depending on the user's operating system, leading to alot of
+friction while setting up the application on their machines.
+3. <b>Dependency management:</b> As applications grow in complexity keeping track of all the dependencies and ensuring everything is installed correctly across
+different environment becomes a difficult task.
+
+## Benefits of containers:
+1. <b>Single configuration file:</b> Containers allow you to describe your application's configuration, dependencies and runtime environment in a single file
+(e.g Docker file), making it easier to manage and reproduce environments.
+
+2. <b>Isolated environments:</b> Each container runs in a separate isolated environment, ensuring their dependencies and configuration do not conflict with other
+applications or the host system.
+
+3. <b>Portability and local setup simplification:</b> Containers make it easy for us to setup and run projects locally regardless of what operation system or environment we are
+currently using. This ensures consistent development experiences.
+
+4. <b>Auxiliary Services and Databases:</b> Containers simplify the installation and management of auxiliary services and databases required for your projects, like MongoDB, PostgreSQL, etc.
+
+5. <b>Orchestration and scaling:</b> Containers are lightweight and we can just launch alot of them for scaling our services. This is where container orchestration tools like Kubernetes come into the picture.
+
+>There are container management tools other than Docker, like Podman, Buildah, BuildKit, etc.
+
+## Docker images v/s Docker containers
+
+### Docker Image
+Docker image is a standalone, lightweight executable package that contains everything you need to run an application. This includes code, runtime,libraries, environment variables and configuration files.
+
+For easier understanding we can think of a docker image similar to your github repository. Your github repository containes all the necessary files and dependencies it needs to run your application. Similarly docker
+iamge contains everything required to run a specific piece of software or application.
+
+Docker images are built from a set of instructions called a Dockerfile. The Dockerfile specifies the steps to create the image, such as installing dependencies, copying files, and setting environment variables.
+
+### Docker Container
+A Docker container is a running instance of a Docker image. It encapsulates the application or service and its dependencies, running in an isolated environment.
+
+A good mental model for understanding a Docker container is to think of it as when you run node index.js on your machine from some source code you got from GitHub. Just like how running node index.js creates an instance of your application, a Docker container is an instance of a Docker image, running the application or service within an isolated environment.
+
+Docker containers are created from Docker images and can be started, stopped, and restarted as needed. Multiple containers can be created from the same image, each running as an isolated instance of the application or service.
+
+>TLDR
+>- **Docker Image**: A lightweight, standalone package that contains everything needed to run a piece of software, similar to a codebase on GitHub.
+>- **Docker Container**: A running instance of a Docker image, encapsulating the application or service and its dependencies in an isolated environment, similar to running `node index.js` from a codebase.
+
+
+Docker Architecture
+
+Docker uses client-server architecture which consists of:
+
+1. Docker daemon
+The docker daemon(dockerd) is a long running server which listens for Docker API requests and manages Docker objects such as images, containers, networks and volumes.
+This is a background process to manage containers on the host machine. A daemon can also communicate with other daemons to manage Docker services.
+
+2. Docker client
+The docker client(docker) is the primary way that many Docker users interact with Docker. When you use docker commands such as docker run, the client sends these commands to dockerd, which carries then out.
+The docker command uses the Docker API. The docker client can communicate with more than one daemon.
+
+3. Docker registry
+A docker registry stores Docker images. Docker hub is the largest public registry and Docker looks for images on Docker Hub by default. You can also run your own private registry.
+
+4. Docker objects
+When you use Docker, you are creating and using images, containers, networks, volumes, plugins, and other objects.
+
+
+Links:
+- https://docs.docker.com/guides/docker-overview/
+- https://www.geeksforgeeks.org/virtualization-vs-containerization/
+
+
