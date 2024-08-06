@@ -26,9 +26,9 @@
   }
 }
 
-.card-green{
-    background: rgba(172, 226, 185, 0.4);
-    height: 100px;
-    width: 100px;
-    animation: float 8s ease-in-out infinite;
+.card-green {
+  background: rgba(172, 226, 185, 0.4);
+  height: 100px;
+  width: 100px;
+  animation: float 8s ease-in-out infinite;
 }

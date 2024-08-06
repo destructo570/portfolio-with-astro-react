@@ -7,7 +7,9 @@ const ProjectCard = (props) => {
       <div className="flex card-content">
         <div className="px-4 py-2">
           <h4 className="line-clamp-1 text-lg tracking-wide">{title}</h4>
-          <p className="text-sm line-clamp-2 tracking-wider opacity-50">{sub_title}</p>
+          <p className="text-sm line-clamp-2 tracking-wider opacity-50">
+            {sub_title}
+          </p>
         </div>
       </div>
     </ReactCard>
