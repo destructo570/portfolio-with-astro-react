@@ -34,7 +34,7 @@ const { Content } = await post.render();
     <div class="mx-auto mb-24 flex flex-col items-center">
       <div class="w-full max-w-[768px] mx-auto my-32">
         <StyledLink link="/blog" title="Back to all posts" classes="mb-2" before_asset="back"/>
-        <h1>{post.data.title}</h1>
+        <h1 class="blog-title">{post.data.title}</h1>
         <Author
           author={post.data.author}
           date={dayjs(`${post.data.date}`).locale("en").format("MMMM D, YYYY")}
@@ -47,7 +47,7 @@ const { Content } = await post.render();
         <Image
         src={post.data.image}
         alt=""
-        class="rounded-2xl max-h-[500px]"
+        class="rounded-lg max-h-[500px]"
         />
         <div class="max-w-[1000px] image-noise"></div>
       </div>
@@ -55,9 +55,9 @@ const { Content } = await post.render();
         <!-- <div class="flex gap-4 items-center h-[24px] mt-8 max-w-[768px] mx-auto">
           <TagCloud list_data={post.data.categories} />
         </div> -->
-        <div class="prose prose-sm max-w-[768px] prose-invert mx-auto my-20">
+        <article class="prose prose-quoteless prose-neutral dark:prose-invert mx-auto my-20">
           <Content />
-        </div>
+        </article>
       </div>
     </div>
   </Main>

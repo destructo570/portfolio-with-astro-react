@@ -24,7 +24,7 @@ const ProjectCardList = () => {
       {PROJECTS.map((category, index) => {
         return (
           <div className="py-5" key={`category-${index}`}>
-            <h4 className={"decoration-solid underline"}>
+            <h4 className={"decoration-solid underline underline-offset-2"}>
               {category.category}
             </h4>
             <div className="grid grid-cols-2 gap-3 py-5 cards max-sm:grid-cols-1">

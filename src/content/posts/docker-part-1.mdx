@@ -10,7 +10,7 @@ title: Docker - Introduction and Overview
 
 ## What is Docker ?
 Docker is an open source platform that enables you to build, deploy, run, update and manage containerized applications easily.
-It lets you create and manage containers which contains eveything the application/sofware needs to run, such as code, libraries, runtime, file system, etc.
+It lets you create and manage containers which contains everything the application/sofware needs to run, such as code, libraries, runtime, file system, etc.
 
 ## Containers v/s Virtual machines
 
@@ -34,7 +34,7 @@ compared to VMs since only one operating system needs to be managed which allows
 | Slower deployment times due to OS boot process              | Faster deployment times since containers start quickly 
 | Requires more resources as each VM has its own OS           | More efficient resource utilization with containerization
 
-Why containerize an application ?
+### Why containerize an application ?
 1. <b>Different operating systems:</b> Developers and users often have different operating system which can lead to compatibility issues when running applications.
 2. <b>Varying project setups:</b> The steps required to run the same application can be different depending on the user's operating system, leading to alot of
 friction while setting up the application on their machines.
@@ -79,9 +79,9 @@ Docker containers are created from Docker images and can be started, stopped, an
 >- **Docker Container**: A running instance of a Docker image, encapsulating the application or service and its dependencies in an isolated environment, similar to running `node index.js` from a codebase.
 
 
-Docker Architecture
+## Docker Architecture
 
-Docker uses client-server architecture which consists of:
+#### Docker uses client-server architecture which consists of:
 
 1. Docker daemon
 The docker daemon(dockerd) is a long running server which listens for Docker API requests and manages Docker objects such as images, containers, networks and volumes.
@@ -96,6 +96,8 @@ A docker registry stores Docker images. Docker hub is the largest public registr
 
 4. Docker objects
 When you use Docker, you are creating and using images, containers, networks, volumes, plugins, and other objects.
+
+
 
 
 Links:

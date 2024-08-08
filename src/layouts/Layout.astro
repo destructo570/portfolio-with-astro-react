@@ -23,12 +23,6 @@ const { title, description, frontmatter, robots, image } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Seo {title} {description} url={Astro.url} {image} {frontmatter} {robots} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Pixelify+Sans:wght@600&display=swap"
-      rel="stylesheet"
-    />
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title}</title>

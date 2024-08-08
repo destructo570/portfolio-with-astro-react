@@ -1,14 +1,30 @@
 :root {
   --accent-color: #b4ff39;
-  --text-default: #ddddddd7;
+  --text-default: #d4d4d4;
   --text-disabled: #adadad8e;
   --card-color: rgba(23, 23, 23, 0.95);
   --card-color-hover: rgba(41, 41, 41, 0.95);
 }
 
+@font-face {
+  font-family: 'GeistVF';
+  src: url('/fonts/GeistVF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistMonoVF';
+  src: url('/fonts/GeistMonoVF.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   color: #f7f7f7;
-  /* font-family: "IBM Plex Mono"; */
+  font-family: "GeistVF";
   /* background-image: linear-gradient(
       rgba(255, 255, 255, 0.02) 1.5px,
       transparent 1.5px
@@ -32,8 +48,9 @@ h3,
 h4,
 h5,
 strong,
-u {
-  color: #ffffffec !important;
+u,b{
+  color: #ffffff !important;
+  font-weight: 500 !important;
 }
 
 h2,
@@ -62,8 +79,8 @@ h4 {
 p {
   color: var(--text-default) !important;
   font-weight: 400;
-  font-size: 18px;
-  font-family: "IBM Plex Sans", "sans-serif";
+  font-size: 16px;
+  font-family: "GeistVF", "sans-serif";
 }
 
 p,
@@ -75,6 +92,12 @@ tr,
 thead,
 hr {
   border-color: #292929 !important;
+}
+
+th{
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
 }
 
 pre {
@@ -132,13 +155,13 @@ pre {
 }
 
 .project-list{
-  background-color: #111111;
-  border: 1px solid #f7f7f723;
+  background-color: #1111119c;
+  border: 1px solid #f7f7f717;
   border-radius: 8px;
 }
 
 .tag{
-  background-color: rgba(82, 82, 82, 0.4);
+  background-color: rgba(82, 82, 82, 0.281);
   font-size: 14px;
   color: #cdcdcd;
 }
@@ -151,4 +174,18 @@ pre {
 .anim-hover-accent:hover {
   color: var(--accent-color);
   opacity: 1;
+}
+
+.blog-title{
+  font-family: "GeistMonoVF";
+}
+
+.prose a{
+  text-decoration-color: #525252 !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+.prose table{
+  margin: 3em 0;
 }
