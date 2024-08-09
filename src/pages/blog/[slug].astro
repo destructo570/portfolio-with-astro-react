@@ -32,7 +32,7 @@ const { Content } = await post.render();
 <Layout title={post.data.title} description={post.body} image={post.data.image}>
   <Main>
     <div class="mx-auto mb-24 flex flex-col items-center">
-      <div class="w-full max-w-[768px] mx-auto my-32">
+      <div class="w-full max-w-[768px] mx-auto mt-32 mb-24">
         <StyledLink link="/blog" title="Back to all posts" classes="mb-2" before_asset="back"/>
         <h1 class="blog-title">{post.data.title}</h1>
         <Author
@@ -40,7 +40,7 @@ const { Content } = await post.render();
           date={dayjs(`${post.data.date}`).locale("en").format("MMMM D, YYYY")}
           image={post.data.image}
           read_time={post.data.read_time}
-          classes="py-8"
+          classes="mt-8"
         />
       </div>
       <div class="image-noise-wrapper max-w-[1000px]">

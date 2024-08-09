@@ -1,6 +1,6 @@
 :root {
   --accent-color: #b4ff39;
-  --text-default: #d4d4d4;
+  --text-default: #BBBBBB;
   --text-disabled: #adadad8e;
   --card-color: rgba(23, 23, 23, 0.95);
   --card-color-hover: rgba(41, 41, 41, 0.95);
@@ -336,4 +336,8 @@ pre {
   .slide-enter-content > *:nth-child(40) {
     --enter-stage: 40 !important;
   }
+}
+
+.text-white{
+  color: white !important;
 }
