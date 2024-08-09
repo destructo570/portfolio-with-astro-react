@@ -1,22 +1,22 @@
 :root {
   --accent-color: #b4ff39;
-  --text-default: #BBBBBB;
+  --text-default: #bbbbbb;
   --text-disabled: #adadad8e;
   --card-color: rgba(23, 23, 23, 0.95);
   --card-color-hover: rgba(41, 41, 41, 0.95);
 }
 
 @font-face {
-  font-family: 'GeistVF';
-  src: url('/fonts/GeistVF.woff') format('woff');
+  font-family: "GeistVF";
+  src: url("/fonts/GeistVF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'GeistMonoVF';
-  src: url('/fonts/GeistMonoVF.woff') format('woff');
+  font-family: "GeistMonoVF";
+  src: url("/fonts/GeistMonoVF.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -48,7 +48,8 @@ h3,
 h4,
 h5,
 strong,
-u,b{
+u,
+b {
   color: #ffffff !important;
   font-weight: 500 !important;
 }
@@ -94,7 +95,7 @@ hr {
   border-color: #292929 !important;
 }
 
-th{
+th {
   color: #ffffff !important;
   font-weight: 500 !important;
   font-size: 18px !important;
@@ -154,13 +155,13 @@ pre {
   right: 0%;
 }
 
-.project-list{
+.project-list {
   background-color: #1111119c;
   border: 1px solid #f7f7f717;
   border-radius: 8px;
 }
 
-.tag{
+.tag {
   background-color: rgba(82, 82, 82, 0.281);
   font-size: 14px;
   color: #cdcdcd;
@@ -176,20 +177,23 @@ pre {
   opacity: 1;
 }
 
-.blog-title{
+.blog-title {
   font-family: "GeistMonoVF";
 }
 
-.prose a{
+.prose a {
   text-decoration-color: #525252 !important;
   text-underline-offset: 3px;
   text-decoration-thickness: 2px;
 }
 
-.prose table{
-  margin: 3em 0;
+.prose p {
+  line-height: 1.7rem;
 }
 
+.prose table {
+  margin: 3em 0;
+}
 
 @keyframes slide-enter {
   0% {
@@ -338,6 +342,6 @@ pre {
   }
 }
 
-.text-white{
+.text-white {
   color: white !important;
 }

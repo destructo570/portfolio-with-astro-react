@@ -13,6 +13,6 @@ const formatted_blog_posts = formatBlogPosts(posts, {
 });
 ---
 
-<div class="grid grid-cols-3 max-sm:grid-cols-1 gap-6 mb-24 cards">
+<div class="grid grid-cols-1 max-sm:grid-cols-1 mb-24 cards">
   {formatted_blog_posts.map((post) => <Post post={post} />)}
 </div>

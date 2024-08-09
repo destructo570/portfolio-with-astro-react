@@ -1,13 +1,27 @@
 ---
 import { type CollectionEntry } from "astro:content";
-import { Image } from "astro:assets";
+import dayjs from "dayjs";
 type Props = {
   post: CollectionEntry<"posts">;
 };
 const { post } = Astro.props;
 ---
 
-<article class="w-full h-[380px] rounded-md blog-item-card hover:scale-95">
+<a
+  href={`/blog/${post.slug}`}
+  class="w-full opacity-60 hover:opacity-100 transition-opacity duration:1000ms flex justify-between"
+>
+  <div class="py-4 w-full sm:w-[80%]">
+    <h4 class="mb-1 line-clamp-2">{post.data.title}</h4>
+    <p class={"line-clamp-2 text-sm opacity-50"}>{post.body}</p>
+  </div>
+  <p class="items-center text-sm sm:flex hidden">
+    {dayjs(`${post.data.date}`).locale("en").format("MMM D, YYYY")}
+  </p>
+</a>
+
+<!-- OLD CARD VEIW -->
+<!-- <article class="w-full h-[380px] rounded-md blog-item-card hover:scale-95">
   <a href={`/blog/${post.slug}`} class="h-[360px] block">
     <Image
       class:list={["object-cover w-full h-[220px] rounded-t-md"]}
@@ -20,7 +34,7 @@ const { post } = Astro.props;
       <p class={"line-clamp-3 text-sm opacity-50"}>{post.body}</p>
     </div>
   </a>
-</article>
+</article> -->
 
 <style>
   .blog-item-card {

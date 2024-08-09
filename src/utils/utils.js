@@ -10,10 +10,10 @@ export const formatBlogPosts = (
   const filtered_posts = posts;
   if (sort_by_date) {
     filtered_posts?.sort((a, b) => {
-      new Date(a.data.date) - new Date(b.data.date);
+      return new Date(b.data.date) - new Date(a.data.date);
     });
   } else {
-    filtered_posts?.sort(() => Math.random() - 0.5);
+    return filtered_posts?.sort(() => Math.random() - 0.5);
   }
 
   if (typeof limit === "number") {

@@ -1,11 +1,12 @@
 ---
 type Props = {
-    is_full_height?: boolean
+    is_full_height?: boolean,
+    width?: string,
 }
 
-const {is_full_height} = Astro.props;
+const {is_full_height, width="max-w-5xl"} = Astro.props;
 ---
 
-<main class:list={["px-16 w-full max-w-6xl max-sm:px-6 mx-auto slide-enter-content animate-delay-500", {'h-screen' : is_full_height}]}>
+<main class:list={["px-16 w-full max-sm:px-6 mx-auto slide-enter-content animate-delay-500", {'h-screen' : is_full_height}, width]}>
     <slot/>
 </main>
