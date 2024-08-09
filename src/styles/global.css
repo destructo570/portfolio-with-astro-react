@@ -214,7 +214,7 @@ pre {
     --enter-stage: 0;
     --enter-step: 90ms;
     --enter-initial: 0ms;
-    animation: slide-enter 1s both 1;
+    animation: slide-enter 700ms both 1;
     animation-delay: calc(
       var(--enter-initial) + var(--enter-stage) * var(--enter-step)
     );
