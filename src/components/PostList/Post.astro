@@ -7,17 +7,18 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<a
-  href={`/blog/${post.slug}`}
-  class="w-full  flex justify-between"
->
-  <div class="py-4 w-full sm:w-[80%] opacity-70 hover:opacity-100 transition-opacity">
-    <h4 class="mb-1 line-clamp-2">{post.data.title}</h4>
-    <p class={"line-clamp-2 text-sm opacity-50"}>{post.body}</p>
+<a href={`/blog/${post.slug}`} class="w-full">
+  <div
+    class="flex justify-between opacity-70 hover:opacity-100 transition-opacity"
+  >
+    <div class="py-4 w-full sm:w-[80%]">
+      <h4 class="mb-1 line-clamp-2">{post.data.title}</h4>
+      <p class={"line-clamp-2 text-sm opacity-50"}>{post.body}</p>
+    </div>
+    <p class="items-center text-sm sm:flex hidden">
+      {dayjs(`${post.data.date}`).locale("en").format("MMM D, YYYY")}
+    </p>
   </div>
-  <p class="items-center text-sm sm:flex hidden">
-    {dayjs(`${post.data.date}`).locale("en").format("MMM D, YYYY")}
-  </p>
 </a>
 
 <!-- OLD CARD VEIW -->
