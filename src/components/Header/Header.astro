@@ -13,7 +13,7 @@ console.log(current_path)
     <li class:list={["flex justify-center items-center", `${current_path === "" ? 'active': 'anim-hover-white'}`]}>
       <a href="/">Home</a>
     </li>
-    <li class:list={["flex justify-center items-center", `${current_path === "blog" ? 'active': 'anim-hover-white'}`]}>
+    <li class:list={["flex justify-center items-center", `${current_path.includes("blog") ? 'active': 'anim-hover-white'}`]}>
       <a href="/blog">Blog</a>
     </li>
     <li class:list={["flex justify-center items-center anim-hover-white"]}>
