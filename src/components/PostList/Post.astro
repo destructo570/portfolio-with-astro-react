@@ -13,7 +13,7 @@ const { post } = Astro.props;
   >
     <div class="py-4 w-full sm:w-[80%]">
       <h4 class="mb-1 line-clamp-2">{post.data.title}</h4>
-      <p class={"line-clamp-2 text-sm opacity-50"}>{post.body}</p>
+      <p class={"line-clamp-2 text-sm opacity-50"}>{post.data.description}</p>
     </div>
     <p class="items-center text-sm sm:flex hidden">
       {dayjs(`${post.data.date}`).locale("en").format("MMM D, YYYY")}
