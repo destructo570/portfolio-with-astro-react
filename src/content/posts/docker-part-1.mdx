@@ -11,6 +11,7 @@ description: What is Docker ? Docker is an open source platform that enables you
 import { Image } from 'astro:assets';
 import containerization from './images/containerization.png';
 import virtualization from './images/virtualization.png';
+import docker_architecture from './images/docker_architecture.png';
 
 ## What is Docker ?
 Docker is an open source platform that enables you to build, deploy, run, update and manage containerized applications easily.
@@ -21,12 +22,12 @@ It lets you create and manage containers which contains everything the applicati
 Virtualization and Containerization are two popular ways to host an application in a machine or computer.
 
 ### Virtualization: 
-<Image src={virtualization} alt="A rocketship in space." class="rounded-md"/>
+<Image src={virtualization} alt="virtualization diagram" class="rounded-md"/>
 Virtualization allows us to partition or split a single physical computer into several VMs. Each of these VMs can then work independently and run different
 operation systems and applications while sharing the resources of a single computer. This is possible due to an intermediary layer using software known as a hypervisor, which makes virtualization possible.. It divides the underlying physical computer into multiple VMs and allocates and manges resources in each divided virtual environment.
 
 ### Containerization:
-<Image src={containerization} alt="A rocketship in space." class="rounded-md"/>
+<Image src={containerization} alt="containerization diagram" class="rounded-md"/>
 Containerization is basically another form of virtualization. It lets you run applications and their dependencies in isolated containers, but unlike VMs
 containers use the same operating system kernel as the host machine. This provides a portable and consistent runtime for applications and it's more lightweight
 compared to VMs since only one operating system needs to be managed which allows you to quickly scale up or down based on demand. These containers can be run on any machine with a container runtime, such as Docker. These container runtimes provide an isolated environment for running applications consistently across different environments.
@@ -89,18 +90,20 @@ Docker containers are created from Docker images and can be started, stopped, an
 
 #### Docker uses client-server architecture which consists of:
 
-1. Docker daemon
+<Image src={docker_architecture} alt="docker architecture" class="rounded-md"/>
+
+1. <b>Docker daemon: </b>
 The docker daemon(dockerd) is a long running server which listens for Docker API requests and manages Docker objects such as images, containers, networks and volumes.
 This is a background process to manage containers on the host machine. A daemon can also communicate with other daemons to manage Docker services.
 
-2. Docker client
+2. <b>Docker client: </b>
 The docker client(docker) is the primary way that many Docker users interact with Docker. When you use docker commands such as docker run, the client sends these commands to dockerd, which carries then out.
 The docker command uses the Docker API. The docker client can communicate with more than one daemon.
 
-3. Docker registry
+3. <b>Docker registry: </b>
 A docker registry stores Docker images. Docker hub is the largest public registry and Docker looks for images on Docker Hub by default. You can also run your own private registry.
 
-4. Docker objects
+4. <b>Docker objects: </b>
 When you use Docker, you are creating and using images, containers, networks, volumes, plugins, and other objects.
 
 
