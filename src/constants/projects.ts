@@ -1,5 +1,24 @@
 export const PROJECTS = [
   {
+    category: "Web3",
+    projects: [
+      {
+        id: "jetpack_web3_wallet",
+        title: "Jetpack Web3 wallet",
+        sub_title: "Multichain web3 wallet application which let's you create or import wallet to send & receive crypto.",
+        description: "Web3 wallet application which let's you create web3 wallet and send receive crypto.",
+        url: "https://github.com/destructo570/jetpack-web3-wallet"
+      },
+      {
+        id: "nft_viewer_solana",
+        title: "Solana NFT Viewer",
+        sub_title: "Website to show all solana NFTs owned by a public address.",
+        description: "Website to show all solana NFTs owned by a public address.",
+        url: "https://github.com/destructo570/nft-viewer-app"
+      }
+    ]
+  },
+  {
     category: "Websites",
     projects: [
       {
