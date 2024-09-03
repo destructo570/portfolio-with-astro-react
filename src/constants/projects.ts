@@ -15,7 +15,14 @@ export const PROJECTS = [
         sub_title: "Website to show all solana NFTs owned by a public address.",
         description: "Website to show all solana NFTs owned by a public address.",
         url: "https://github.com/destructo570/nft-viewer-app"
-      }
+      },
+      {
+        id: "solana_faucet",
+        title: "Solana Faucet",
+        sub_title: "Website to airdrop sol to your devnet wallet.",
+        description: "Website to airdrop sol to your devnet wallet.",
+        url: "https://github.com/destructo570/sol-faucet"
+      },
     ]
   },
   {
