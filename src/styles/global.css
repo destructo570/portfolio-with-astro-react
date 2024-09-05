@@ -61,6 +61,15 @@ strong {
   font-weight: 500;
 }
 
+code{
+  color:#00FFBD !important;
+  font-family: GeistMonoVF !important;
+  font-weight: 500 !important;
+}
+code::before, code::after{
+  content: "" !important;
+}
+
 h1 {
   font-size: 56px !important;
   font-weight: 400 !important;
