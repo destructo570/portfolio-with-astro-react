@@ -1,0 +1,113 @@
+---
+author: vishal-kashi
+categories: ["Docker"]
+date: 2024-08-05
+read_time: 10 min read
+featured: false
+image: ./images/whale-tail.jpg
+title: Dockerfile and Cheatsheet
+description: If we want to create an image from a docker file. The docker file is a text file that contains instructions for building a docker image.
+---
+
+## Dockerfile
+
+If we want to create an image from a docker file. The docker file is a text file that contains instructions for building a docker image. 
+It defines the base image, sets up the environment, copies files into the image, and installs any necessary dependencies.
+
+
+It has two parts:
+
+1. The first part is the **FROM** instruction, which specifies the base image to use for the new image.
+2. The second part is the **RUN** instruction, which specifies the commands to run when building the image.
+
+Here is an example of a Dockerfile:
+
+```dockerfile
+FROM node:16-alpine                 # --- base image --- #
+WORKDIR /app                        # --- working directory --- #
+COPY . .                            # --- copy files to working dir --- #
+
+RUN npm install                     # --- install dependencies --- #
+RUN npm run build                   # --- build the app --- #
+
+EXPOSE 3000                         # --- expose port 3000 --- #
+
+CMD ["node", "dist/index.js"]       # --- command to run the app --- #
+```
+
+`WORKDIR` - Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY` instructions that follow it. <br />
+`RUN` - Executes any commands in a new layer on top of the current image and commits the results. <br />
+`CMD` - Provides defaults for executing a container. There can only be one CMD instruction in a Dockerfile. <br />
+`EXPOSE` - Informs Docker that the container listens on the specified network ports at runtime. <br />
+`ENV` - Sets the environment variable. <br />
+`COPY` - Allow files from the Docker host to be added to the Docker image. <br />
+
+
+To build a docker image from a Dockerfile, use the `docker build` command.
+
+```bash
+docker build -t image_name .
+```
+
+To run the container, use the `docker run` command.
+
+```bash
+docker run -p 3000:3000 image_name
+```
+
+We can also pass environment variables to the container using the `-e` flag.
+
+```bash
+docker run -p 3000:3000 -e DATABASE_URL="postgre_url_here" image_name
+```
+
+## Docker Cheatsheet
+
+#### 1. Start a docker container.
+* -d : Run container in background (detached mode)
+* -p : Publish a container's port to the host. Here it will map port 27020 of the host to port 27017 of the container.
+
+We are using the latest version of mongo db. There are many images available on [docker hub](https://hub.docker.com/).
+```bash
+docker run -d -p 27020:27017 mongo
+```
+
+#### 2. List all docker images in your machine.
+```bash
+docker images
+```
+
+#### 3. List all running containers on your machine.
+```bash
+docker ps
+```
+
+#### 4. Build a docker image from a Dockerfile.
+```bash
+docker build
+```
+
+#### 5. Push your docker image to a docker registry.
+```bash
+docker push
+```
+
+#### 6. Kill a running container.
+```bash
+docker kill container_id
+```
+
+#### 7. Remove a docker image.
+```bash
+docker rmi image_id
+```
+
+#### 8. Remove a docker container.
+```bash
+docker rm container_id
+```
+
+#### 9. Execute a command in a running container.
+```bash
+docker exec -it container_name_or_id /bin/bash
+```

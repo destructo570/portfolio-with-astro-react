@@ -1,0 +1,179 @@
+---
+author: vishal-kashi
+categories: ["Docker"]
+date: 2024-08-06
+read_time: 10 min read
+featured: false
+image: ./images/galaxy-layers.jpg
+title: Layers in Docker
+description: In Docker, layers are a fundamental part of the image architecture that allows Docker to be efficient, fast, and portable. A Docker image is essentially built up from a series of layers, each representing a set of differences from the previous layer.
+---
+import { Image } from 'astro:assets';
+import layers_example from './images/docker-layers-1.png';
+import layers_example_2 from './images/docker-layers-2.png';
+
+## What is a layer in Docker?
+
+In Docker, layers are a fundamental part of the image architecture that allows Docker to be efficient, fast, and portable. A Docker image is essentially built up from a series of layers, each representing a set of differences from the previous layer.
+
+How layers are made -
+1. <b><u>Base Layer</u>:</b> The starting point of an image, typically an operating system (OS) like Ubuntu, Alpine, or any other base image specified in a Dockerfile.
+2. <b><u>Instruction Layers</u>:</b> Each command in a Dockerfile creates a new layer in the image. These include instructions like RUN, COPY, which modify the filesystem by installing packages, copying files from the host to the container, or making other changes. Each of these modifications creates a new layer on top of the base layer.
+3. <b><u>Reusable & Shareable</u>:</b> Layers are cached and reusable across different images, which makes building and sharing images more efficient. If multiple images are built from the same base image or share common instructions, they can reuse the same layers, reducing storage space and speeding up image downloads and builds.
+4. <b><u>Immutable</u>:</b> Once a layer is created, it cannot be changed. If a change is made, Docker creates a new layer that captures the difference. This immutability is key to Docker's reliability and performance, as unchanged layers can be shared across images and containers.
+
+
+Let's see an example with a simple node js app. This is how our Dockerfile looks like.
+
+```dockerfile
+FROM node:18-alpine                 # --- layer 1 --- #
+
+WORKDIR /app                        # --- layer 2 --- #
+
+COPY . .                            # --- layer 3 --- #
+
+RUN npm install                     # --- layer 4 --- #
+RUN npm run build                   # --- layer 5 --- #
+RUN npx prisma generate             # --- layer 6 --- #
+
+EXPOSE  3000
+
+CMD ["node", "dist/index.js"]
+```
+
+To build this image, we run the following command:
+
+```bash
+docker build -t simple_nodejs .
+```
+
+The terminal output will show the layers created for this image.
+
+<Image src={layers_example} alt="layers_example diagram" class="rounded-md"/>
+
+As we can see
+1. The base layer is the first layer created, which is the `node:18-alpine` image.
+2. Then each `RUN`, `WORKDIR`, `COPY` command creates a new layer.
+3. `EXPOSE` and `CMD` does not create a new layer in the image because they don't modify the filesystem or the image contents.
+4. Since layers can get re-used accross docker builds you see `CACHED` in 1/6.
+
+
+### Why use Layers ?
+
+If you change your Dockerfile, layers can get re-used based on where the change was made.
+
+We made changes to our source code or modified the package.json file (added a dependency):
+```dockerfile
+FROM node:18-alpine                 # --- layer 1 - Cached--- #
+
+WORKDIR /app                        # --- layer 2 - Cached --- #
+
+COPY . .                            # --- layer 3 - Not Cached --- #
+
+RUN npm install                     # --- layer 4 - Not Cached --- #
+RUN npm run build                   # --- layer 5 - Not Cached --- #
+RUN npx prisma generate             # --- layer 6 - Not Cached --- #
+
+EXPOSE  3000
+
+CMD ["node", "dist/index.js"]
+```
+
+<Image src={layers_example} alt="layers_example diagram" class="rounded-md"/>
+
+Note: 1/6 and 2/6 layers are cached because they are not changed. <br/>
+(Even though it doesn't say it in the terminal, 1/6 is still cached)
+
+
+### Optimising the Dockerfile
+
+How often do you think your `dependencies` change? <br/>
+How often does the `npm install` layer need to change? <br/>
+Wouldn't it be nice if we could `cache` the `npm install` step considering dependencies don't change very often? <br/>
+
+We can take advantage of the fact that layers are cached and optimise our Dockerfile.
+
+Let's change our Dockerfile to the following:
+
+```dockerfile
+FROM node:18-alpine                
+
+WORKDIR /app                        
+
+COPY package* .
+COPY ./prisma .
+RUN npm install                     
+
+COPY . .                            
+RUN npm run build                   
+RUN npx prisma generate             
+
+EXPOSE  3000
+
+CMD ["node", "dist/index.js"]
+```
+
+<details>
+  <summary>Old File</summary>
+  
+```dockerfile
+FROM node:18-alpine                 
+
+WORKDIR /app                        
+
+COPY . .                            
+
+RUN npm install                     
+RUN npm run build                   
+RUN npx prisma generate             
+
+EXPOSE  3000
+
+CMD ["node", "dist/index.js"]
+```
+  
+</details>
+
+1. We first copy over only the things that `npm install` and `npx prisma generate` needs.
+2. Then we run these scripts
+3. Then we copy over the rest of the source code
+
+Then we can have two cases:
+
+1. <b>Case 1</b> - You change your source code (but nothing in package.json/prisma)
+
+```dockerfile
+FROM node:18-alpine                  # --- layer 1 - Cached --- #
+
+WORKDIR /app                         # --- layer 2 - Cached --- #
+
+COPY package* .                      # --- layer 3 - Cached --- #
+COPY ./prisma .                      # --- layer 4 - Cached --- #
+    
+RUN npm run build                    # --- layer 5 - Cached --- #
+RUN npx prisma generate              # --- layer 6 - Cached --- #
+COPY . .                             # --- layer 7 - Not Cached --- #  
+
+EXPOSE  3000
+
+CMD ["node", "dist/index.js"]
+```
+
+2. <b>Case 2</b> - You change the package.json file (added a dependency)
+
+```dockerfile
+FROM node:18-alpine                  # --- layer 1 - Cached --- #
+
+WORKDIR /app                         # --- layer 2 - Cached --- #
+
+COPY package* .                      # --- layer 3 - Not Cached --- #
+COPY ./prisma .                      # --- layer 4 - Not Cached --- #
+    
+RUN npm run build                    # --- layer 5 - Not Cached --- #
+RUN npx prisma generate              # --- layer 6 - Not Cached --- #
+COPY . .                             # --- layer 7 - Not Cached --- #  
+
+EXPOSE  3000
+
+CMD ["node", "dist/index.js"]
+```
