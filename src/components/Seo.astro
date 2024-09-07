@@ -9,6 +9,7 @@ const {
   image,
   frontmatter,
   robots,
+  short_description
 } = Astro.props;
 
 const jsonLD = jsonLDGenerator({
@@ -39,9 +40,10 @@ const jsonLD = jsonLDGenerator({
 
 <!-- Twitter -->
 <meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:description" content={short_description} />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content={new URL(image?.src, Astro.url)} />
+<meta name="twitter:image" content={new URL(image?.src || siteData.image.src, Astro.url)} />
+<meta name="twitter:image:url" content={new URL(image?.src || siteData.image.src, Astro.url)} />
 <meta name="twitter:image:alt" content={title} />
 <meta name="twitter:domain" content={import.meta.env.SITE} />
 

@@ -15,6 +15,7 @@ const postsColleciton = defineCollection({
     image: image(),
     title: z.string(),
     description: z.string().optional(),
+    seo_description: z.string().optional(),
     read_time: z.string().optional(),
   }),
 });

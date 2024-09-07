@@ -7,12 +7,13 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  short_description?: string;
   frontmatter?: string;
   robots?: string;
   image?: any;
 }
 
-const { title, description, frontmatter, robots, image } = Astro.props;
+const { title, description, frontmatter, robots, image, short_description } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +23,7 @@ const { title, description, frontmatter, robots, image } = Astro.props;
     <meta name="description" content="Vishal Kashi's website" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <Seo {title} {description} url={Astro.url} {image} {frontmatter} {robots} />
+    <Seo {title} {description} url={Astro.url} {image} {frontmatter} {robots} {short_description}/>
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title}</title>

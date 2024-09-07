@@ -26,10 +26,11 @@ type Props = {
 };
 
 const { post } = Astro.props;
+
 const { Content } = await post.render();
 ---
 
-<Layout title={post.data.title} description={post.body} image={post.data.image}>
+<Layout title={post.data.title} description={post.body}  image={post.data.image} short_description={post.data.description}>
   <Main>
     <div class="mx-auto mb-24 flex flex-col items-center">
       <div class="w-full max-w-[768px] mx-auto mt-32 mb-24">
