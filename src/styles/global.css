@@ -70,6 +70,10 @@ code::before, code::after{
   content: "" !important;
 }
 
+article{
+  width: 100% !important;
+}
+
 h1 {
   font-size: 56px !important;
   font-weight: 400 !important;
