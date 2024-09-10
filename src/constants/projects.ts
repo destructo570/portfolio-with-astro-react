@@ -30,13 +30,13 @@ export const PROJECTS = [
     projects: [
       {
         id: "kumo_5678",
-        title: "Kumo - Blogging website",
+        title: "Neko - Serverless blogging website",
         sub_title:
           "Serverless blogging website with notion like editor. Made with Cloudflare workers, Hono and NextJs.",
         description:
           "Serverless blogging website with notion like editor. Made with Cloudflare workers, Hono and NextJs",
         teck_stack: ["NextJs", "Hono", "Prisma", "Postgres"],
-        url: "https://github.com/destructo570/kumo-serverless-blogging-website",
+        url: "https://github.com/destructo570/neko-serverless-blogging-website",
       },
       {
         id: "moekana_5678",
