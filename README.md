@@ -1,4 +1,4 @@
-## Portfolio website made with Astro v4 and React.
+## Portfolio website made with Astro and React.
 
 ### [See it live!](https://www.destructo.dev)
 
@@ -16,7 +16,7 @@
 - Tech stack/Skills section
 - Projects section
 - MDX blog
-- Resume download
+- Resume/CV download
 
 
 ### Tech Stack
@@ -24,3 +24,4 @@
 - React
 - TypeScript
 - TailwindCss
+- DayJs
