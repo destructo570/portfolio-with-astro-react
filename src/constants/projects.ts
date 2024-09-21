@@ -14,16 +14,17 @@ export const PROJECTS = [
       {
         id: "nft_viewer_solana",
         title: "Solana NFT Viewer",
-        sub_title: "Website to show all solana NFTs owned by a public address.",
-        description:
-          "Website to show all solana NFTs owned by a public address.",
+        sub_title: "View all solana NFTs owned by a public solana address.",
+        description: "View all solana NFTs owned by a public solana address.",
         url: "https://github.com/destructo570/nft-viewer-app",
       },
       {
         id: "solana_faucet",
         title: "Solana Faucet",
-        sub_title: "Website to airdrop sol to your devnet wallet.",
-        description: "Website to airdrop sol to your devnet wallet.",
+        sub_title:
+          "Airdrop sol to your wallet on devnet. Made with NextJs 14 and Solana web3 SDK.",
+        description:
+          "Airdrop sol to your wallet on devnet. Made with NextJs 14 and Solana web3 SDK.",
         url: "https://github.com/destructo570/sol-faucet",
       },
     ],
@@ -61,7 +62,7 @@ export const PROJECTS = [
       },
       {
         id: "portfolio_7890",
-        title: "Portfolio Website",
+        title: "Portfolio Website in Astro",
         sub_title:
           "Personal website/portfolio made with Astro to showcase everything about me and my projects.",
         description: "My portfolio website made with astro.",
