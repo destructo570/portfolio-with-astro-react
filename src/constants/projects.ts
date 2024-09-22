@@ -5,25 +5,28 @@ export const PROJECTS = [
       {
         id: "jetpack_web3_wallet",
         title: "Jetpack Web3 wallet",
-        sub_title: "Multichain web3 wallet application which let's you create or import wallet to send & receive crypto.",
-        description: "Web3 wallet application which let's you create web3 wallet and send receive crypto.",
-        url: "https://github.com/destructo570/jetpack-web3-wallet"
+        sub_title:
+          "Multichain web3 wallet application which let's you create or import wallet to send & receive crypto.",
+        description:
+          "Web3 wallet application which let's you create web3 wallet and send receive crypto.",
+        url: "https://github.com/destructo570/jetpack-web3-wallet",
       },
       {
         id: "nft_viewer_solana",
         title: "Solana NFT Viewer",
         sub_title: "Website to show all solana NFTs owned by a public address.",
-        description: "Website to show all solana NFTs owned by a public address.",
-        url: "https://github.com/destructo570/nft-viewer-app"
+        description:
+          "Website to show all solana NFTs owned by a public address.",
+        url: "https://github.com/destructo570/nft-viewer-app",
       },
       {
         id: "solana_faucet",
         title: "Solana Faucet",
         sub_title: "Website to airdrop sol to your devnet wallet.",
         description: "Website to airdrop sol to your devnet wallet.",
-        url: "https://github.com/destructo570/sol-faucet"
+        url: "https://github.com/destructo570/sol-faucet",
       },
-    ]
+    ],
   },
   {
     category: "Websites",
@@ -59,7 +62,8 @@ export const PROJECTS = [
       {
         id: "portfolio_7890",
         title: "Portfolio Website",
-        sub_title: "Personal website/portfolio made with Astro to showcase everything about me and my projects.",
+        sub_title:
+          "Personal website/portfolio made with Astro to showcase everything about me and my projects.",
         description: "My portfolio website made with astro.",
         teck_stack: ["React", "NodeJs", "MongoDb", "Express"],
         url: "https://github.com/destructo570/portfolio-with-astro-react",
@@ -213,18 +217,46 @@ export const PROJECTS = [
   },
 ];
 
-
 export const TECH_STACK = [
   {
     title: "Frontend",
-    tech_stack: ["React", "NextJs", "Astro", "TypeScript", "JavaScript", "HTML", "CSS" , "Tailwind", "React Native"]
+    tech_stack: [
+      "React",
+      "NextJs",
+      "Astro",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind",
+      "React Native",
+      "Storybook",
+    ],
   },
   {
     title: "Backend",
-    tech_stack: ["NodeJs", "Express", "NextAuth", "JWT", "PostgresSQL", "MySQL", "MongoDb", "Firebase"]
+    tech_stack: [
+      "NodeJs",
+      "Express",
+      "Hono",
+      "PostgresSQL",
+      "MySQL",
+      "SQlite",
+      "MongoDb",
+      "Firebase",
+      "Redis",
+      "WebSockets",
+    ],
   },
   {
-    title: "Other stuff",
-    tech_stack: ["Git", "WebGl", "R3F", "ThreeJs", "Java", "Kotlin", "Android development"]
+    title: "Others",
+    tech_stack: [
+      "Java",
+      "Kotlin",
+      "Docker",
+      "Git",
+      "AWS",
+      "WebGl",
+      "R3F",
+      "ThreeJs",
+    ],
   },
-]
+];
