@@ -96,7 +96,7 @@ export const PROJECTS = [
           "See useful information related to all countries like currency, native names, border countries etc.",
         description:
           "See useful information related to all countries like currency, native names, border countries etc.",
-        teck_stack: ["NextJs", "Firebase", "Stripe", "Next Auth"],
+        teck_stack: ["NextJs", "Firebase", "Stripe", "NextAuth"],
         url: "https://github.com/destructo570/react-countries",
       },
       {
