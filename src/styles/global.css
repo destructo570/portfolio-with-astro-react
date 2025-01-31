@@ -1,15 +1,32 @@
 :root {
-  --accent-color: #00FFBD;
-  --text-default: #bbbbbb;
+  --accent-color: #00ffbd;
+  --text-default: #d4d4d8;
   --text-disabled: #adadad8e;
-  --card-color: rgba(23, 23, 23, 0.95);
+  --surface-primary: rgba(36, 35, 41, 0.95);
+  --surface-highlight: rgba(55, 54, 59, 0.95);
+  --card-color: rgba(36, 35, 41, 0.95);
   --card-color-hover: rgba(41, 41, 41, 0.95);
+}
+
+@font-face {
+  font-family: "Geist-Light";
+  src: url("/fonts/Geist-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist-Thin";
+  src: url("/fonts/Geist-Thin.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "GeistVF";
   src: url("/fonts/GeistVF.woff") format("woff");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -35,7 +52,7 @@ html {
       transparent 1.5px
     );
   background-size: 100px 100px; */
-  background-color: #030303;
+  background-color: #18181b;
 }
 
 blockquote {
@@ -50,7 +67,7 @@ h5,
 strong,
 u,
 b {
-  color: #ffffff !important;
+  color: var(--text-default) !important;
   font-weight: 500 !important;
 }
 
@@ -61,23 +78,25 @@ strong {
   font-weight: 500;
 }
 
-code{
-  color:#00FFBD !important;
+code {
+  color: #00ffbd !important;
   font-family: GeistMonoVF !important;
   font-weight: 500 !important;
 }
-code::before, code::after{
+code::before,
+code::after {
   content: "" !important;
 }
 
-article{
+article {
   width: 100% !important;
 }
 
 h1 {
-  font-size: 56px !important;
+  font-size: 56px;
   font-weight: 400 !important;
 }
+
 h2 {
   font-size: 40px;
 }
@@ -115,7 +134,7 @@ th {
 }
 
 pre {
-  background-color: #0f0f0f !important;
+  background-color: #161618 !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -169,13 +188,13 @@ pre {
 }
 
 .project-list {
-  background-color: #1111119c;
-  border: 1px solid #f7f7f717;
+  background-color: var(--surface-primary);
+  /* border: 1px solid var(--surface-primary); */
   border-radius: 8px;
 }
 
 .tag {
-  background-color: rgba(82, 82, 82, 0.281);
+  background-color: var(--surface-highlight);
   font-size: 14px;
   color: #cdcdcd;
 }
@@ -200,7 +219,8 @@ pre {
   text-decoration-thickness: 2px;
 }
 
-.prose p {
+p, .prose p,
+li {
   line-height: 1.7rem;
 }
 
@@ -357,4 +377,9 @@ pre {
 
 .text-white {
   color: white !important;
+}
+
+.banner-overlay{
+  width: 100%;
+  background: linear-gradient(transparent, rgba(24, 24, 27, 0.5) 40%, rgb(24, 24, 27));
 }

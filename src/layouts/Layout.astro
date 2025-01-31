@@ -29,7 +29,8 @@ const { title, description, frontmatter, robots, image, short_description } = As
     <title>{title}</title>
   </head>
   <body class="min-h-screen">
-    <svg class="fixed top-0 left-0 w-full h-full pointer-events-none">
+    <!-- Noise Background -->
+    <!-- <svg class="fixed top-0 left-0 w-full h-full pointer-events-none">
       <filter id="noise-filter-bg">
         <feTurbulence
           type="fractalNoise"
@@ -53,8 +54,10 @@ const { title, description, frontmatter, robots, image, short_description } = As
         ></filter
       ><rect width="100%" height="100%" filter="url(#noise-filter-bg)"
       ></rect></svg
-    >
+    > -->
     <Header />
-    <slot />
+    <div class="max-w-[768px] mx-auto">
+      <slot />
+    </div>
   </body>
 </html>

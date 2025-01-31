@@ -1,28 +1,43 @@
 ---
 import { Image } from "astro:assets";
-import user_profile from "../../../public/images/user_profile.png";
+import user_profile from "../../../public/images/user_profile_2.jpg";
 import "./styles.css";
 ---
 
-<section
-  class="flex justify-between items-center min-h-[800px] max-sm:flex-col-reverse max-sm:pb-24"
->
-  <div class="w-1/2 my-auto max-sm:w-full">
-    <h2>Vishal Kashi</h2>
-    <p class="px-1 pt-0">Full Stack Engineer • India</p>
-    <p class="px-1">
-      <span>I love moving pixels</span> 👾 <span>and killing bugs</span> 🐞
+<section class="pt-24 min-h-[400px] max-sm:flex-col-reverse max-sm:pb-24">
+  <div>
+    <div class="my-auto max-sm:w-full flex justify-between w-full">
+      <div class="flex flex-col justify-end">
+        <p class="font-[Geist-Thin] font-extralight text-3xl">Hello,</p>
+        <p class="font-[Geist-Thin] font-extralight text-5xl pt-2">
+          I'm Vishal.
+        </p>
+      </div>
+      <Image
+        src={user_profile}
+        alt=""
+        width={200}
+        height={200}
+        class="hero-profile-img rounded-lg rotate-3 grayscale"
+      />
+    </div>
+  </div>
+
+  <div class="pt-5">
+    <p class="pt-2">
+      Full Stack Web Developer from India. My passion is to craft high quality
+      web experiences and building cool stuff everyday.
     </p>
-    <p class="px-1">
+    <p>
       <a
         href="mailto:dev.vishalkashi@gmail.com"
         target="_blank"
         rel="noreferrer"
       >
-        <h5 class="hover-highlight px-1 mt-2">Let's Connect 🚀</h5>
+        <h5 class="hover-highlight mt-4">Let's Connect 🚀</h5>
       </a>
     </p>
-    <div class="flex gap-3 pb-2 pt-4 px-1">
+    <div class="flex gap-3 pb-2 pt-4">
       <a
         href="https://www.github.com/destructo570"
         target="_blank"
@@ -50,23 +65,6 @@ import "./styles.css";
       >
         <h5 class="hover-highlight">dribbble</h5>
       </a>
-    </div>
-  </div>
-  <div class="hero-profile min-w-[400px] min-h-[800px] max-sm:min-h-[600px]">
-    <Image
-      src={user_profile}
-      alt=""
-      width={400}
-      height={400}
-      class="hero-profile-img absolute top-[20%] right-[0px] z-10"
-    />
-    <div
-      class="hero-circle-card absolute card-green rounded-full top-[25%] left-[0px] z-20"
-    >
-    </div>
-    <div
-      class="hero-circle-card absolute rounded-full bottom-[30%] right-[0px] max-sm:bottom-[15%] z-20"
-    >
     </div>
   </div>
 </section>

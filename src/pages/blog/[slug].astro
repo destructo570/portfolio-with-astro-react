@@ -33,14 +33,14 @@ const { Content } = await post.render();
 <Layout title={post.data.title} description={post.body}  image={post.data.image} short_description={post.data.description}>
   <Main>
     <div class="mx-auto mb-24 flex flex-col items-center">
-      <div class="w-full max-w-[768px] mx-auto mt-32 mb-24">
+      <div class="w-full max-w-[768px] mx-auto mt-32 mb-16">
         <StyledLink
           link="/blog"
           title="Back to all posts"
           classes="mb-2"
           before_asset="back"
         />
-        <h1 class="blog-title">{post.data.title}</h1>
+        <h1 class="blog-title text-3xl">{post.data.title}</h1>
         <Author
           author={post.data.author}
           date={dayjs(`${post.data.date}`).locale("en").format("MMMM D, YYYY")}
@@ -49,9 +49,9 @@ const { Content } = await post.render();
           classes="mt-8"
         />
       </div>
-      <div class="image-noise-wrapper max-w-[1000px]">
-        <Image src={post.data.image} alt="" class="rounded-lg max-h-[500px]" />
-        <div class="max-w-[1000px] image-noise"></div>
+      <div class="max-w-[1000px]">
+        <Image src={post.data.image} alt="" class="rounded-lg max-h-[400px]" width={768} height={400}/>
+        <!-- <div class="max-w-[1000px] image-noise"></div> -->
       </div>
       <article
         class="prose prose-quoteless prose-neutral dark:prose-invert mx-auto my-20 slide-enter-content animate-delay-500"
