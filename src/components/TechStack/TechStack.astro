@@ -3,11 +3,13 @@ import { TECH_STACK } from "../../constants/projects";
 import Tag from "../Tag/Tag.astro";
 ---
 
-<section class="min-h-max">
+<section class="min-h-max px-4 max-sm:px-0">
   <div class="flex gap-2 items-center">
-    <h3 class="inline-block w-max min-w-[230px] text-[30px] font-[Geist-Light]">What I know</h3>
+    <h3 class="inline-block w-max min-w-[230px] text-[30px] font-[Geist-Light]">
+      What I know
+    </h3>
   </div>
-  <div class=" pb-14 grid grid-cols-3 gap-3 py-5 cards max-sm:grid-cols-1">
+  <div class="pb-14 grid grid-cols-3 gap-3 py-5 cards max-sm:grid-cols-1">
     {
       TECH_STACK.map((category) => {
         return (
@@ -15,7 +17,11 @@ import Tag from "../Tag/Tag.astro";
             <h4 class="p-0 m-0">{category.title}</h4>
             <div class="mt-2 flex gap-2 flex-wrap">
               {category.tech_stack.map((tech) => {
-                return <div class="tag rounded bg-zinc-600 px-2 py-1 inline-block no-underline hover:cursor-default anim-hover-accent">{tech}</div>;
+                return (
+                  <div class="tag rounded bg-zinc-600 px-2 py-1 inline-block no-underline hover:cursor-default anim-hover-accent">
+                    {tech}
+                  </div>
+                );
               })}
             </div>
           </div>

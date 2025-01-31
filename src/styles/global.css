@@ -379,7 +379,20 @@ li {
   color: white !important;
 }
 
+/* .banner-image{
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  opacity: 0.5;
+  background-image: url("/public/images/other/mountain.jpg");
+  background-repeat: no repeat;
+  background-position: 40%;
+  background-size: cover;
+  display: flex;
+  align-items: end;
+}
+
 .banner-overlay{
   width: 100%;
-  background: linear-gradient(transparent, rgba(24, 24, 27, 0.5) 40%, rgb(24, 24, 27));
-}
+  background: linear-gradient(rgba(24, 24, 27, 0.5) 10%, rgba(24, 24, 27, 0.5) 10%, #18181b);
+} */
